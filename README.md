@@ -1,5 +1,13 @@
+<!---
 ![Banner](https://user-images.githubusercontent.com/38491216/130723681-5b7327a1-809d-4fd2-b97a-b08310eed7e5.png)
+--->
 
+<div align="center">
+	    
+<img height="250px" src="https://user-images.githubusercontent.com/38491216/130723681-5b7327a1-809d-4fd2-b97a-b08310eed7e5.png" align="center" />
+
+</div>
+	
 <div align="center">
   
 	An electron-based SounCloud client
