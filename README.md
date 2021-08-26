@@ -11,7 +11,7 @@
 </div>
 
 ## __Objetivo__
-*Poner objetivo aquí.*
+Desarollar una aplicación de escritorio en electron que reprodusca música de utilizando la API de souncloud generando datos a partir del historial de reproducción del usuario brindandandole información de sus gustos musicales.
 
 ## __Info__
 Desarrollo del proyecto final de la materia Ingeniería de Software de la carrera de Matemáticas Aplicadas y Computación de la Facultad de Estudios Superiores Acatlán
