@@ -32,6 +32,7 @@ Desarrollo del proyecto final de la materia Ingeniería de Software de la carrer
 		<td align="center"><a href="https://github.com/GenaroGA"><img src="https://avatars.githubusercontent.com/u/88780201?v=4" width="100px;" alt=""/><br /><sub><b>Genaro</b></sub></a><br /></td>
 		<td align="center"><a href="https://github.com/AtreyuLodbrok"><img src="https://avatars.githubusercontent.com/u/89424056?v=4" width="100px;" alt=""/><br /><sub><b>Fernando</b></sub></a><br /></td>
 		<td align="center"><a href="https://github.com/Ichiniro"><img src="https://avatars.githubusercontent.com/u/38491216?v=4" width="100px;" alt=""/><br /><sub><b>Giovanni</b></sub></a><br /></td>
+		<td align="center"><a href="https://github.com/Jaimemmp62"><img src="https://avatars.githubusercontent.com/u/88783801?s=400&u=817acd10897ca8207937773e6946020a3de13676&v=4" width="100px;" alt=""/><br /><sub><b>Jaime</b></sub></a><br /></td>
 		<td align="center"><a href="https://github.com/PerlaAlmaraz"><img src="https://avatars.githubusercontent.com/u/89563940?v=4" width="100px;" alt=""/><br /><sub><b>Perla</b></sub></a><br /></td>
 	</tr>
 </table>
