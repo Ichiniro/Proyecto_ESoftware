@@ -12,7 +12,7 @@
 
 ## __Objetivo__
 
-Desarrollar una aplicación de escritorio en electron que reproduzca música, utilizando la API de SounCloud obteniendo datos a partir del historial de reproducción y con esto poder generar estadísticas del usuario, para ofrecer información constante de su actvidad musical al mismo usuario.
+Desarrollar una aplicación de escritorio en electron que reproduzca música, utilizando la API de SounCloud obteniendo datos a partir del historial de reproducción y con esto poder saber la canción, artista y albúm mas escuchado del usuario hasta ese momento, para ofrecer información constante de su actvidad musical al mismo usuario.
 
 ## __Info__
 Desarrollo del proyecto final de la materia Ingeniería de Software de la carrera de Matemáticas Aplicadas y Computación de la Facultad de Estudios Superiores Acatlán
