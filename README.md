@@ -1,13 +1,11 @@
 <div align="center">
 
-<img height="250px" src="https://user-images.githubusercontent.com/38491216/130723681-5b7327a1-809d-4fd2-b97a-b08310eed7e5.png" align="center" />
+![Untitled](https://user-images.githubusercontent.com/38491216/135780635-1efc33a9-3f95-4612-93aa-14493880f4ad.png)
 
 </div>
 
 <div align="center">
-
 	A Java desktop aplication for restaurants
-
 </div>
 
 ## __Objetivo__
