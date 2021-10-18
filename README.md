@@ -1,24 +1,28 @@
 <div align="center">
 
-<img height="250px" src="https://user-images.githubusercontent.com/38491216/130723681-5b7327a1-809d-4fd2-b97a-b08310eed7e5.png" align="center" />
+![Untitled](https://user-images.githubusercontent.com/38491216/135780635-1efc33a9-3f95-4612-93aa-14493880f4ad.png)
 
 </div>
 
 <div align="center">
-
-	An electron-based SounCloud client
-
+	A Java desktop aplication for restaurants
 </div>
 
 ## __Objetivo__
 
-Desarrollar una aplicación de escritorio en electron que reproduzca música, utilizando la API de SounCloud obteniendo datos a partir del historial de reproducción y con esto poder saber la canción, artista y albúm mas escuchado del usuario hasta ese momento, para ofrecer información constante de su actvidad musical al mismo usuario.
+Desarrollar una aplicación de escritorio en Java que permita administrar las órdenes dentro de un restaurante así como las ordenes hechas a través de Rappi, permitiendo al usuario:
+
+- Tomar la orden
+- Cancelar pedidos
+- Rastrear el estado del pedido
+- Hacer la cuenta
 
 ## __Info__
 Desarrollo del proyecto final de la materia Ingeniería de Software de la carrera de Matemáticas Aplicadas y Computación de la Facultad de Estudios Superiores Acatlán
 
 ## Herramientas utilizadas
 
+- NeatBeans 12.4
 - Figma
 - DBdesigner
 - Trello
