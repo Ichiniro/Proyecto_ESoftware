@@ -68,7 +68,7 @@ public class SignUpUI extends JFrame {
         add(confirmPasswordTF);
 
         JLabel usernameLB = new JLabel("Username");
-        usernameLB.setBounds(366, 337, 63, 16);
+        usernameLB.setBounds(366, 337, 200, 16);
         add(usernameLB);
 
         JTextField usernameTF = new JTextField();

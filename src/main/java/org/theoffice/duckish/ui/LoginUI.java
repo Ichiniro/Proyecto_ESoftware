@@ -18,7 +18,7 @@ public class LoginUI extends JFrame {
         this.setTitle("Duckish - Log In");
 
         JLabel title = new JLabel("Duckish");
-        title.setBounds(105, 70, 190, 50);
+        title.setBounds(105, 70, 200, 50);
         title.setFont(new Font("Roboto", Font.BOLD, 50));
         add(title);
 
