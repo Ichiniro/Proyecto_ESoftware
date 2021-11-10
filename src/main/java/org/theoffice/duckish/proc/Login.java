@@ -1,7 +1,5 @@
 package org.theoffice.duckish.proc;
 
-import org.theoffice.duckish.obj.Employee;
-
 public class Login {
     public boolean checkLogin() {
         /*
@@ -15,7 +13,18 @@ public class Login {
         return false;
     }
 
-    public void login(Employee e) {
-        System.out.println(e.getFirstName() + " has logged in.");
+    public boolean login(String username, String password) {
+        System.err.println("Verify login here!");
+
+        // Test code, remove before prod
+        boolean accountExists = username.equals("pollo");
+
+
+        if (accountExists) {
+            System.err.println("Accound exists, loggin in");
+        } else {
+            System.err.println("Accound does not exists, fuck off!");
+        }
+        return accountExists;
     }
 }
