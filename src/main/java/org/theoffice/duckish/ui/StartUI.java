@@ -11,12 +11,12 @@ public class StartUI extends JFrame {
 
     public StartUI() {
         this.setLayout(null);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(400, 450);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
         this.setResizable(false);
         this.setTitle("Duckish");
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         JLabel title = new JLabel("Duckish");
         title.setBounds(105, 70, 200, 50);
@@ -42,10 +42,14 @@ public class StartUI extends JFrame {
         add(signUp);
 
         try {
-            BufferedImage img = ImageIO.read(new File("src/main/java/org/theoffice/duckish/ui/images/logo_nobg.png")); // wtf?
+            BufferedImage img = ImageIO.read(new File("src/main/resources/images/logo_nobg.png")); // wtf?
             JLabel bgLogo = new JLabel(new ImageIcon(img));
             bgLogo.setBounds(220, 250, 200, 200);
             add(bgLogo);
+
+            BufferedImage icon = ImageIO.read(
+                    new File("src/main/resources/images/logo.png"));
+            this.setIconImage(icon);
         } catch (IOException e) {
             e.printStackTrace();
         }

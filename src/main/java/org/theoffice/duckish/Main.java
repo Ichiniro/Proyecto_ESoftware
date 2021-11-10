@@ -15,7 +15,7 @@ public class Main {
         new SetUI();
         new SetUIFont(new javax.swing.plaf.FontUIResource("Roboto", Font.PLAIN, 14));
 
-        JFrame.setDefaultLookAndFeelDecorated(true); // Doesn't work IDK why
+        JFrame.setDefaultLookAndFeelDecorated(false); // Doesn't work IDK why
         new Start();
     }
 }

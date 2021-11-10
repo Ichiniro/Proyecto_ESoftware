@@ -9,6 +9,7 @@ public class SignUp {
          * Step 2: ??????
          * Step 3: Profit!
         */
+
         System.out.println(e.getFirstName() + " has been registered.");
     }
 }

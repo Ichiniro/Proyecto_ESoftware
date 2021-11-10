@@ -1,7 +1,9 @@
 package org.theoffice.duckish.obj;
 
-import javax.swing.*;
 import java.lang.reflect.Field;
+import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Employee {
     private String firstName;
@@ -15,6 +17,7 @@ public class Employee {
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
+
     public String getFirstName() {
         return firstName;
     }
@@ -22,12 +25,19 @@ public class Employee {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-    public String getLastName() {
-        return lastName;
-    }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public boolean setUsername(String username) {
+        //this.username = username;
+        String regex = "^(?=.*[a-zA-Z])(?=\\S+$).{4,20}$";
+        Pattern p = Pattern.compile(regex);
+
+        Matcher m = p.matcher(username);
+        System.out.println("setUN " + m.matches());
+        if (m.matches()) {
+            this.username = username;
+        }
+
+        return m.matches();
     }
     public String getUsername() {
         return username;
@@ -36,45 +46,47 @@ public class Employee {
     public void setJobTitle(String jobTitle) {
         this.jobTitle = jobTitle;
     }
-    public String getJobTitle() {
-        return jobTitle;
-    }
 
-    public void setPassword(String password, String confirmPassword) {
+    public boolean setPassword(char[] pass, char[] confirmPass) {
         // encrypt here?
-        if (password.length() >= 8) {
-            if (password.equals(confirmPassword)) this.password = password;
-            else JOptionPane.showMessageDialog(null, "Passwords are not the same");
-        } else JOptionPane.showMessageDialog(null, "Password must be at least 8 character long");
-    }
-    private String getPassword() {
-        return password;
+        if (Arrays.equals(pass, confirmPass)) {
+            this.password = String.valueOf(pass);
+
+            String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,20}$";
+            Pattern p = Pattern.compile(regex);
+
+            Matcher m = p.matcher(password);
+            System.out.println("checkPW + " + m.matches());
+
+            return m.matches();
+        }
+        return false;
     }
 
     public void setEmployeeID(int employeeID) {
         this.employeeID = employeeID;
     }
-    public int getEmployeeID() {
-        return employeeID;
-    }
 
     public void setRestaurantID(int restaurantID) {
         this.restaurantID = restaurantID;
-    }
-    public int getRestaurantID() {
-        return restaurantID;
     }
 
     /*
      * Check if all the fields had been filled
     */
     public boolean isValid() throws IllegalAccessException {
+
+        /* TODO: Test code, remove before pushing and uncomment the rest
+        return true;*/
+
+        // Check everything is filled
         for (Field f : getClass().getDeclaredFields()) {
             if (f.get(this).toString().isBlank()) {
-                JOptionPane.showMessageDialog(null, "Please, fill all the fields");
                 return false;
             }
         }
+
         return true;
     }
+
 }
