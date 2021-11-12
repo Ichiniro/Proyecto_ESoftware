@@ -1,21 +1,21 @@
 package org.theoffice.duckish;
 
+import org.theoffice.duckish.ext.SetUI;
+import org.theoffice.duckish.ext.SetUIFont;
+import org.theoffice.duckish.proc.Start;
+
 import javax.swing.*;
+import java.awt.*;
 
 public class Main {
-    public static void main(String[] args) throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
-        if (System.getProperty("os.name").equals("Linux")) {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("com.sun.java.swing.plaf.gtk.GTKLookAndFeel".equals(info.getClassName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } else if (System.getProperty("os.name").equals("Windows")) {
-            UIManager.setLookAndFeel(
-                    UIManager.getCrossPlatformLookAndFeelClassName());
-        }
 
-        new Duckish(); //Create and show the GUI.
+    public static void main(String[] args) throws Exception {
+
+        // Config UI
+        new SetUI();
+        new SetUIFont(new javax.swing.plaf.FontUIResource("Roboto", Font.PLAIN, 14));
+
+        JFrame.setDefaultLookAndFeelDecorated(false); // Doesn't work IDK why
+        new Start();
     }
 }
