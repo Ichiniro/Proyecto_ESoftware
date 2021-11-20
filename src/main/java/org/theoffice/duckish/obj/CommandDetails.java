@@ -1,12 +1,21 @@
 package org.theoffice.duckish.obj;
 
 public class CommandDetails {
+    private int commandDetailsID;
     private int commandID;
     private int quantity;
     private int dishID;
     private int tableID;
     private int tableNum;
     private int employeeID;
+
+    public int getCommandDetailsID() {
+        return commandDetailsID;
+    }
+
+    public void setCommandDetailsID(int commandDetailsID) {
+        this.commandDetailsID = commandDetailsID;
+    }
 
     public int getCommandID() {
         return commandID;
