@@ -1,5 +1,5 @@
 package org.theoffice.duckish.obj;
-
+import org.theoffice.duckish.proc.EncryptPassword;
 import javax.swing.*;
 import java.lang.reflect.Field;
 
@@ -41,13 +41,15 @@ public class Employee {
     }
 
     public void setPassword(String password, String confirmPassword) {
-        // encrypt here?
+        // Check if the password is secure enough and then ncrypted
         if (password.length() >= 8) {
-            if (password.equals(confirmPassword)) this.password = password;
+            if (password.equals(confirmPassword)){
+                this.password = EncryptPassword.getSHA256(password);
+            } 
             else JOptionPane.showMessageDialog(null, "Passwords are not the same");
         } else JOptionPane.showMessageDialog(null, "Password must be at least 8 character long");
     }
-    private String getPassword() {
+    public String getPassword() {
         return password;
     }
 
