@@ -16,6 +16,7 @@ public class Kitchen extends javax.swing.JFrame {
      */
     public Kitchen() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -52,10 +53,7 @@ public class Kitchen extends javax.swing.JFrame {
 
         TableKitchen.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4"
@@ -98,6 +96,10 @@ public class Kitchen extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
+        SystemUI bc = new SystemUI();
+        bc.setVisible(true);
+        
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

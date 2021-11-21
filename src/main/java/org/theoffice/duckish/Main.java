@@ -18,7 +18,8 @@ public class Main {
         
         //Initialize Principal Frame xd aiudaa
         SystemUI inc = new SystemUI();
-        inc.setVisible(true);        
+        inc.setVisible(true);
+        
         //new Start();
     }
 }
