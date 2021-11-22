@@ -76,12 +76,9 @@ public class Employee {
     */
     public boolean isValid() throws IllegalAccessException {
 
-        /* TODO: Test code, remove before pushing and uncomment the rest
-        return true;*/
-
         // Check everything is filled
         for (Field f : getClass().getDeclaredFields()) {
-            if (f.get(this).toString().isBlank()) {
+            if (f.get(this).toString().isEmpty()) {
                 return false;
             }
         }

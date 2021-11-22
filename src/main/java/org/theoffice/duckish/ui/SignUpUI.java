@@ -122,7 +122,7 @@ public class SignUpUI extends JFrame {
                     if (employee.isValid()) {
                         new SignUp(employee);
                         JOptionPane.showMessageDialog(null,
-                                "Account created succesfully. Press ok to cotinue.");
+                                "Account created succesfully. Press ok to continue.");
                         this.dispose();
                         new Menu();
                     } else {

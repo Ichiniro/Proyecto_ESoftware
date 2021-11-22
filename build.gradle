@@ -11,10 +11,21 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation 'org.mariadb.jdbc:mariadb-java-client:2.7.3'
 }
 
 test {
     useJUnitPlatform()
+}
+
+jar {
+    manifest {
+        attributes(
+                'Manifest-Version': '1.0',
+                'Main-Class': 'org.theoffice.duckish.Main',
+                'Created-By': 'TheOffice'
+        )
+    }
 }
