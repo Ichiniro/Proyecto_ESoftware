@@ -4,7 +4,7 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[380, 600]"/>
+      <Dimension value="[380, 400]"/>
     </Property>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
@@ -36,9 +36,9 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
               <Component id="AddDessertPanel" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -55,7 +55,7 @@
           </Border>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[380, 600]"/>
+          <Dimension value="[380, 400]"/>
         </Property>
       </Properties>
 
@@ -63,55 +63,32 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="49" pref="103" max="32767" attributes="0"/>
+                  <EmptySpace min="49" pref="71" max="32767" attributes="0"/>
                   <Component id="TitleAddDessert" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
               </Group>
-              <Group type="102" alignment="1" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
                           <Component id="btnBackAddDessert" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
                           <Component id="bntAddDessertConfirm" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="ClaveDessert" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="InClaveDesserttxt" min="-2" pref="200" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="TypeDessert" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="InTypédesserttxt" min="-2" pref="200" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="QuantityDessert" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="InQuantityDesserttxt" min="-2" pref="200" max="-2" attributes="0"/>
-                              </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="NameDessert" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="InNameDesserttxt" min="-2" pref="200" max="-2" attributes="0"/>
                           </Group>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="NameDessert" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="InNameDesserttxt" min="-2" pref="200" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="PriceDessert" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="InPriceDesserttxt" min="-2" pref="200" max="-2" attributes="0"/>
-                              </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="PriceDessert" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="InPriceDesserttxt" min="-2" pref="200" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                  <EmptySpace pref="69" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -130,27 +107,12 @@
                       <Component id="PriceDessert" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="InPriceDesserttxt" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="TypeDessert" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="InTypédesserttxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="bntAddDessertConfirm" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnBackAddDessert" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="ClaveDessert" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="InClaveDesserttxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="QuantityDessert" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="InQuantityDesserttxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="131" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btnBackAddDessert" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="bntAddDessertConfirm" alignment="1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
+                  <EmptySpace pref="91" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -161,36 +123,34 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="24" style="1"/>
             </Property>
+
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Add dessert&apos;s info"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="NameDessert">
           <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Name: "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="PriceDessert">
           <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Price: "/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="TypeDessert">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Type: "/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="ClaveDessert">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Clave: "/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="QuantityDessert">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Quantity: "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnBackAddDessert">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/back_2.png"/>
+            </Property>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[50, 45]"/>
             </Property>
@@ -200,6 +160,11 @@
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="bntAddDessertConfirm">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/add.png"/>
+            </Property>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bntAddDessertConfirmActionPerformed"/>
           </Events>
@@ -210,12 +175,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="InPriceDesserttxtActionPerformed"/>
           </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="InTyp&#xe9;desserttxt">
-        </Component>
-        <Component class="javax.swing.JTextField" name="InClaveDesserttxt">
-        </Component>
-        <Component class="javax.swing.JTextField" name="InQuantityDesserttxt">
         </Component>
       </SubComponents>
     </Container>

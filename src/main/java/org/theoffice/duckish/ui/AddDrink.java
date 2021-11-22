@@ -32,24 +32,26 @@ public class AddDrink extends javax.swing.JFrame {
         TitleAddInfoDrink = new javax.swing.JLabel();
         NameDrink = new javax.swing.JLabel();
         PriceDrink = new javax.swing.JLabel();
-        TypeDrink = new javax.swing.JLabel();
-        ClaveDrink = new javax.swing.JLabel();
-        QuantityDrink = new javax.swing.JLabel();
+
         InNameDrinktxt = new javax.swing.JTextField();
         InPriceDrinktxt = new javax.swing.JTextField();
-        InTypeDrinktxt = new javax.swing.JTextField();
-        InClaveDrinktxt = new javax.swing.JTextField();
-        InQuantityDrinktxt = new javax.swing.JTextField();
+
         btnBckAddDrink = new javax.swing.JButton();
         btnAddDrinkConfirm = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("AddDrink");
         setName("AddDrink"); // NOI18N
+
+        setPreferredSize(new java.awt.Dimension(380, 400));
+
         setResizable(false);
 
         jPanelAddInfoDrink.setBackground(new java.awt.Color(180, 212, 222));
         jPanelAddInfoDrink.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jPanelAddInfoDrink.setPreferredSize(new java.awt.Dimension(380, 400));
+
 
         TitleAddInfoDrink.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         TitleAddInfoDrink.setForeground(new java.awt.Color(0, 0, 0));
@@ -60,27 +62,6 @@ public class AddDrink extends javax.swing.JFrame {
 
         PriceDrink.setForeground(new java.awt.Color(0, 0, 0));
         PriceDrink.setText("Price: ");
-
-        TypeDrink.setForeground(new java.awt.Color(0, 0, 0));
-        TypeDrink.setText("Type: ");
-
-        ClaveDrink.setForeground(new java.awt.Color(0, 0, 0));
-        ClaveDrink.setText("Clave: ");
-
-        QuantityDrink.setForeground(new java.awt.Color(0, 0, 0));
-        QuantityDrink.setText("Quantity: ");
-
-        InTypeDrinktxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InTypeDrinktxtActionPerformed(evt);
-            }
-        });
-
-        InClaveDrinktxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InClaveDrinktxtActionPerformed(evt);
-            }
-        });
 
         btnBckAddDrink.setIcon(new javax.swing.ImageIcon("/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/back_2.png")); // NOI18N
         btnBckAddDrink.setPreferredSize(new java.awt.Dimension(50, 44));
@@ -103,29 +84,26 @@ public class AddDrink extends javax.swing.JFrame {
         jPanelAddInfoDrinkLayout.setHorizontalGroup(
             jPanelAddInfoDrinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAddInfoDrinkLayout.createSequentialGroup()
-                .addContainerGap(84, Short.MAX_VALUE)
+
+                .addContainerGap(96, Short.MAX_VALUE)
                 .addComponent(TitleAddInfoDrink)
                 .addGap(69, 69, 69))
             .addGroup(jPanelAddInfoDrinkLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(jPanelAddInfoDrinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnBckAddDrink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanelAddInfoDrinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(50, 50, 50)
+                .addGroup(jPanelAddInfoDrinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanelAddInfoDrinkLayout.createSequentialGroup()
                         .addGroup(jPanelAddInfoDrinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(ClaveDrink)
-                            .addComponent(QuantityDrink))
-                        .addComponent(TypeDrink, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(PriceDrink, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(NameDrink, javax.swing.GroupLayout.Alignment.TRAILING)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanelAddInfoDrinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanelAddInfoDrinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(InNameDrinktxt)
-                        .addComponent(InPriceDrinktxt)
-                        .addComponent(InTypeDrinktxt)
-                        .addComponent(InClaveDrinktxt)
-                        .addComponent(InQuantityDrinktxt, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
-                    .addComponent(btnAddDrinkConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(PriceDrink)
+                            .addComponent(NameDrink))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanelAddInfoDrinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(InNameDrinktxt, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(InPriceDrinktxt)))
+                    .addGroup(jPanelAddInfoDrinkLayout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(btnBckAddDrink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
+                        .addComponent(btnAddDrinkConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelAddInfoDrinkLayout.setVerticalGroup(
@@ -141,38 +119,24 @@ public class AddDrink extends javax.swing.JFrame {
                 .addGroup(jPanelAddInfoDrinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PriceDrink)
                     .addComponent(InPriceDrinktxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(jPanelAddInfoDrinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TypeDrink)
-                    .addComponent(InTypeDrinktxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(jPanelAddInfoDrinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ClaveDrink)
-                    .addComponent(InClaveDrinktxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(jPanelAddInfoDrinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(QuantityDrink)
-                    .addComponent(InQuantityDrinktxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
-                .addGroup(jPanelAddInfoDrinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnAddDrinkConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBckAddDrink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(70, 70, 70))
+                .addGap(58, 58, 58)
+                .addGroup(jPanelAddInfoDrinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnBckAddDrink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAddDrinkConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(113, Short.MAX_VALUE))
+
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanelAddInfoDrink, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanelAddInfoDrink, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanelAddInfoDrink, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -180,13 +144,6 @@ public class AddDrink extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void InClaveDrinktxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InClaveDrinktxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_InClaveDrinktxtActionPerformed
-
-    private void InTypeDrinktxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InTypeDrinktxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_InTypeDrinktxtActionPerformed
 
     private void btnBckAddDrinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBckAddDrinkActionPerformed
         // TODO add your handling code here:
@@ -235,17 +192,11 @@ public class AddDrink extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ClaveDrink;
-    private javax.swing.JTextField InClaveDrinktxt;
     private javax.swing.JTextField InNameDrinktxt;
     private javax.swing.JTextField InPriceDrinktxt;
-    private javax.swing.JTextField InQuantityDrinktxt;
-    private javax.swing.JTextField InTypeDrinktxt;
     private javax.swing.JLabel NameDrink;
     private javax.swing.JLabel PriceDrink;
-    private javax.swing.JLabel QuantityDrink;
     private javax.swing.JLabel TitleAddInfoDrink;
-    private javax.swing.JLabel TypeDrink;
     private javax.swing.JButton btnAddDrinkConfirm;
     private javax.swing.JButton btnBckAddDrink;
     private javax.swing.JPanel jPanelAddInfoDrink;

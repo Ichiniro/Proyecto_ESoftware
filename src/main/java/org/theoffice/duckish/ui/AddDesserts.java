@@ -32,38 +32,31 @@ public class AddDesserts extends javax.swing.JFrame {
         TitleAddDessert = new javax.swing.JLabel();
         NameDessert = new javax.swing.JLabel();
         PriceDessert = new javax.swing.JLabel();
-        TypeDessert = new javax.swing.JLabel();
-        ClaveDessert = new javax.swing.JLabel();
-        QuantityDessert = new javax.swing.JLabel();
         btnBackAddDessert = new javax.swing.JButton();
         bntAddDessertConfirm = new javax.swing.JButton();
         InNameDesserttxt = new javax.swing.JTextField();
         InPriceDesserttxt = new javax.swing.JTextField();
-        InTypédesserttxt = new javax.swing.JTextField();
-        InClaveDesserttxt = new javax.swing.JTextField();
-        InQuantityDesserttxt = new javax.swing.JTextField();
+
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(380, 600));
+        setPreferredSize(new java.awt.Dimension(380, 400));
         setResizable(false);
 
         AddDessertPanel.setBackground(new java.awt.Color(180, 212, 222));
         AddDessertPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        AddDessertPanel.setPreferredSize(new java.awt.Dimension(380, 600));
+        AddDessertPanel.setPreferredSize(new java.awt.Dimension(380, 400));
 
         TitleAddDessert.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        TitleAddDessert.setForeground(new java.awt.Color(0, 0, 0));
         TitleAddDessert.setText("Add dessert's info");
 
+        NameDessert.setForeground(new java.awt.Color(0, 0, 0));
         NameDessert.setText("Name: ");
 
+        PriceDessert.setForeground(new java.awt.Color(0, 0, 0));
         PriceDessert.setText("Price: ");
 
-        TypeDessert.setText("Type: ");
-
-        ClaveDessert.setText("Clave: ");
-
-        QuantityDessert.setText("Quantity: ");
-
+        btnBackAddDessert.setIcon(new javax.swing.ImageIcon("/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/back_2.png")); // NOI18N
         btnBackAddDessert.setPreferredSize(new java.awt.Dimension(50, 45));
         btnBackAddDessert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,6 +64,7 @@ public class AddDesserts extends javax.swing.JFrame {
             }
         });
 
+        bntAddDessertConfirm.setIcon(new javax.swing.ImageIcon("/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/add.png")); // NOI18N
         bntAddDessertConfirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bntAddDessertConfirmActionPerformed(evt);
@@ -88,43 +82,26 @@ public class AddDesserts extends javax.swing.JFrame {
         AddDessertPanelLayout.setHorizontalGroup(
             AddDessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddDessertPanelLayout.createSequentialGroup()
-                .addGap(49, 103, Short.MAX_VALUE)
+                .addGap(49, 71, Short.MAX_VALUE)
                 .addComponent(TitleAddDessert)
                 .addGap(66, 66, 66))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddDessertPanelLayout.createSequentialGroup()
+            .addGroup(AddDessertPanelLayout.createSequentialGroup()
+                .addGap(47, 47, 47)
                 .addGroup(AddDessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(AddDessertPanelLayout.createSequentialGroup()
-                        .addGap(84, 84, 84)
                         .addComponent(btnBackAddDessert, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(150, 150, 150)
                         .addComponent(bntAddDessertConfirm))
-                    .addGroup(AddDessertPanelLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(AddDessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(AddDessertPanelLayout.createSequentialGroup()
-                                .addComponent(ClaveDessert)
-                                .addGap(18, 18, 18)
-                                .addComponent(InClaveDesserttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(AddDessertPanelLayout.createSequentialGroup()
-                                .addComponent(TypeDessert)
-                                .addGap(18, 18, 18)
-                                .addComponent(InTypédesserttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(AddDessertPanelLayout.createSequentialGroup()
-                                .addComponent(QuantityDessert)
-                                .addGap(18, 18, 18)
-                                .addComponent(InQuantityDesserttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(AddDessertPanelLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(AddDessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(AddDessertPanelLayout.createSequentialGroup()
-                                .addComponent(NameDessert)
-                                .addGap(18, 18, 18)
-                                .addComponent(InNameDesserttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(AddDessertPanelLayout.createSequentialGroup()
-                                .addComponent(PriceDessert)
-                                .addGap(18, 18, 18)
-                                .addComponent(InPriceDesserttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(35, 35, 35))
+                    .addGroup(AddDessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(AddDessertPanelLayout.createSequentialGroup()
+                            .addComponent(NameDessert)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(InNameDesserttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(AddDessertPanelLayout.createSequentialGroup()
+                            .addComponent(PriceDessert)
+                            .addGap(18, 18, 18)
+                            .addComponent(InPriceDesserttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
         AddDessertPanelLayout.setVerticalGroup(
             AddDessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,23 +116,11 @@ public class AddDesserts extends javax.swing.JFrame {
                 .addGroup(AddDessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PriceDessert)
                     .addComponent(InPriceDesserttxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(AddDessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TypeDessert)
-                    .addComponent(InTypédesserttxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(AddDessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ClaveDessert)
-                    .addComponent(InClaveDesserttxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(AddDessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(QuantityDessert)
-                    .addComponent(InQuantityDesserttxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
-                .addGroup(AddDessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBackAddDessert, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bntAddDessertConfirm, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(99, 99, 99))
+                .addGap(83, 83, 83)
+                .addGroup(AddDessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bntAddDessertConfirm)
+                    .addComponent(btnBackAddDessert, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -169,9 +134,9 @@ public class AddDesserts extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 12, Short.MAX_VALUE)
-                .addComponent(AddDessertPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(AddDessertPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 6, Short.MAX_VALUE))
         );
 
         pack();
@@ -229,17 +194,11 @@ public class AddDesserts extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AddDessertPanel;
-    private javax.swing.JLabel ClaveDessert;
-    private javax.swing.JTextField InClaveDesserttxt;
     private javax.swing.JTextField InNameDesserttxt;
     private javax.swing.JTextField InPriceDesserttxt;
-    private javax.swing.JTextField InQuantityDesserttxt;
-    private javax.swing.JTextField InTypédesserttxt;
     private javax.swing.JLabel NameDessert;
     private javax.swing.JLabel PriceDessert;
-    private javax.swing.JLabel QuantityDessert;
     private javax.swing.JLabel TitleAddDessert;
-    private javax.swing.JLabel TypeDessert;
     private javax.swing.JButton bntAddDessertConfirm;
     private javax.swing.JButton btnBackAddDessert;
     // End of variables declaration//GEN-END:variables
