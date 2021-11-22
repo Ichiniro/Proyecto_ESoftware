@@ -118,7 +118,7 @@ public class SignUpUI extends JFrame {
             if (pwdFlag && usrFlag) {
                 try {
                     if (employee.isValid()) {
-                        CRUD myCRUD = new CRUD("ichi","gc");//Cambiar esto
+                        CRUD myCRUD = new CRUD("root","902020");//Cambiar esto
                         myCRUD.connect();
                         myCRUD.creatDB();
                         myCRUD.creatTables();

@@ -11,7 +11,7 @@ public class CRUD {
     private static Connection connection;
     private static Statement statment;
     private static ResultSet result;
-    private static final String url = "jdbc:mysql://localhost:3306";
+    private static final String url = "jdbc:mariadb://localhost:3306";
     private final String user;
     private final String password;
 
@@ -51,36 +51,46 @@ public class CRUD {
         }
     }
 
-    public boolean creatTables() {
+    public boolean creatTables(){
         try {
             statment = connection.createStatement();
-            statment.executeQuery("CREATE TABLE EMPLOYEES IF NOT EXISTS(\n"
-                    + "EMPLOYEE_ID INT PRIMARY KEY auto_increment,\n"
-                    + "FIRST_NAME VARCHAR(50) NOT NULL,\n"
-                    + "LAST_NAME VARCHAR(50),\n"
-                    + "USER_NAME VARCHAR(50) NOT NULL,\n"
-                    + "JOB_TITTLE VARCHAR(50) NOT NULL,\n"
-                    + "PASSWORD_USER VARCHAR(65) NOT NULL\n"
-                    + ")");
-            statment.executeQuery("CREATE TABLE DISHES IF NOT EXISTS(\n"
-                    + "DISH_ID INT PRIMARY KEY auto_increment,\n"
-                    + "DISH_NAME VARCHAR(75) NOT NULL,\n"
-                    + "PRICE FLOAT NOT NULL\n"
-                    + "DESCRIPTION TEXT NOT NULL\n"
-                    + ")");
-            statment.executeQuery("CREATE TABLE COMMAND IF NOT EXISTS(\n"
-                    + "COMMAND_ID INT PRIMARY KEY NOT NULL,\n"
-                    + "DATE_COMMAND DATE,\n"
-                    + "TOTAL FLOAT NOT NULL\n"
-                    + ")");
-            statment.executeQuery("CREATE TABLE COMMAND_DETAILS IF NOT EXISTS(\n"
-                    + "COMMAND_DETAILS_ID INT PRIMARY KEY auto_increment,\n"
-                    + "COMMAND_ID INT, FOREIGN KEY (COMMAND_ID) REFERENCES COMMAND(COMMAND_ID),\n"
-                    + "QUANTITY INT NOT NULL,\n"
-                    + "DISH_ID INT NOT NULL, FOREIGN KEY (DISH_ID) REFERENCES DISHES(DISH_ID),\n"
-                    + "TABLE_NUM INT NOT NULL,\n"
-                    + "EMPLOYEE_ID INT NOT NULL, FOREIGN KEY (EMPLOYEE_ID) REFERENCES EMPLOYEES(EMPLOYEE_ID)\n"
-                    + ")");
+            statment.executeUpdate("create table if not exists employees("
+                    + "employee_id int auto_increment,"
+                    + "first_name varchar(50),"
+                    + "last_name varchar(50),"
+                    + "user_name varchar(50) not null ,"
+                    + "job_title varchar(50) not null ,"
+                    + "pasword_user varchar(65) not null ,"
+                    + "primary key (employee_id)"
+                    + ");");
+            
+            /*statment.execute("CREATE TABLE IF NOT EXISTS DISHES("
+                    + "DISH_ID INT auto_increment,"
+                    + "DISH_NAME VARCHAR(75) NOT NULL,"
+                    + "PRICE FLOAT NOT NULL,"
+                    + "DESCRIPTION TEXT NOT NULL,"
+                    + "primary key (dish_id)"
+                    + ");");
+            connection.close();
+            statment.execute("CREATE TABLE IF NOT EXISTS COMMAND("
+                    + "COMMAND_ID INT NOT NULL,"
+                    + "DATE_COMMAND DATE,"
+                    + "TOTAL FLOAT NOT NULL,"
+                    + "primary key (command_id)"
+                    + ");");
+            connection.close();
+            statment.execute("CREATE TABLE IF NOT EXISTS COMMAND_DETAILS("
+                    + "COMMAND_DETAILS_ID INT auto_increment,"
+                    + "COMMAND_ID INT,"
+                    + "QUANTITY INT NOT NULL,"
+                    + "DISH_ID INT NOT NULL,"
+                    + "TABLE_NUM INT NOT NULL,"
+                    + "EMPLOYEE_ID INT NOT NULL,"
+                    + "primary key (command_details_id),"
+                    + "foreign key (dish_id) references dishes(dish_id),"
+                    + "foreign key (employee_id) references employees(employee_id)"
+                    + ");");
+            connection.close();*/
             return true;
         } catch (SQLException e) {
             return false;
@@ -90,7 +100,7 @@ public class CRUD {
     public boolean addDish(Dish myDish) {
         try {
             statment = connection.createStatement();
-            statment.executeQuery("INSERT INTO DISHES (DISH_NAME,PRICE) VALUES ('"
+            statment.executeUpdate("INSERT INTO DISHES (DISH_NAME,PRICE) VALUES ('"
                     + myDish.getName() + "','"
                     + myDish.getDescription() + "','"
                     + myDish.getPrice() + "')");
@@ -103,7 +113,7 @@ public class CRUD {
     public boolean addEmployee(Employee myEmployee) {
         try {
             statment = connection.createStatement();
-            statment.executeQuery("INSERT INTO EMPLOYEES (FIRST_NAME,LAST_NAME,USER_NAME,JOB_TITTLE,PASSWORD_USER) VALUES ('"
+            statment.executeUpdate("INSERT INTO EMPLOYEES (FIRST_NAME,LAST_NAME,USER_NAME,JOB_TITTLE,PASSWORD_USER) VALUES ('"
                     + myEmployee.getFirstName() + "'," + myEmployee.getLastName()
                     + ",'" + myEmployee.getUsername() + "'," + myEmployee.getJobTitle()
                     + ",'" + myEmployee.getPassword() + "')");
@@ -116,7 +126,7 @@ public class CRUD {
     public boolean addCommand(Command myCommand) {
         try {
             statment = connection.createStatement();
-            statment.executeQuery("INSERT INTO COMMAND (COOMAND_ID,DATE_COMMAND,TOTAL)VALUES ('"
+            statment.executeUpdate("INSERT INTO COMMAND (COOMAND_ID,DATE_COMMAND,TOTAL)VALUES ('"
                     + myCommand.getOrderID() + "','"
                     + myCommand.getDateCommand() + "','"
                     + myCommand.getTotal() + "')");
@@ -129,7 +139,7 @@ public class CRUD {
     public boolean addCommandDetails(CommandDetails myCommandDetails) {
         try {
             statment = connection.createStatement();
-            statment.executeQuery("INSERT INTO COMMAND_DETAILS(COMMAND_ID,QUANTITY,DISH_ID,TABLE_NUM,EMPLOYEE_ID) VALUES ('"
+            statment.executeUpdate("INSERT INTO COMMAND_DETAILS(COMMAND_ID,QUANTITY,DISH_ID,TABLE_NUM,EMPLOYEE_ID) VALUES ('"
                     + myCommandDetails.getCommandID() + "','"
                     + myCommandDetails.getQuantity() + "','"
                     + myCommandDetails.getDishID() + "','"
@@ -328,7 +338,7 @@ public class CRUD {
     public void deleteEmployee(int id) {
         try {
             statment = connection.createStatement();
-            statment.executeQuery("DELETE FROM EMPLOYEE WHERE EMPLOYEE_ID = " + id);
+            statment.executeUpdate("DELETE FROM EMPLOYEE WHERE EMPLOYEE_ID = " + id);
         } catch (SQLException e) {
         }
     }
@@ -336,7 +346,7 @@ public class CRUD {
     public void deleteDish(int id) {
         try {
             statment = connection.createStatement();
-            statment.executeQuery("DELETE FROM DISHES WHERE DISH_ID = " + id);
+            statment.executeUpdate("DELETE FROM DISHES WHERE DISH_ID = " + id);
         } catch (SQLException e) {
         }
     }
@@ -344,7 +354,7 @@ public class CRUD {
     public void deleteCommand(int id) {
         try {
             statment = connection.createStatement();
-            statment.executeQuery("DELETE FROM COMMAND WHERE COMMAND_ID = " + id);
+            statment.executeUpdate("DELETE FROM COMMAND WHERE COMMAND_ID = " + id);
         } catch (SQLException e) {
         }
     }
@@ -352,7 +362,7 @@ public class CRUD {
     public void deleteCommandDetails(int id) {
         try {
             statment = connection.createStatement();
-            statment.executeQuery("DELETE FROM COMMAND_DETAILS WHERE COMMAND_DETAILS_ID = " + id);
+            statment.executeUpdate("DELETE FROM COMMAND_DETAILS WHERE COMMAND_DETAILS_ID = " + id);
         } catch (SQLException e) {
         }
     }
@@ -360,7 +370,7 @@ public class CRUD {
     public boolean updateEmployee(Employee myEmployee) {
         try {
             statment = connection.createStatement();
-            statment.executeQuery("UPDATE EMPLOYEE SET FIRST_NAME = '" + myEmployee.getFirstName() + "',"
+            statment.executeUpdate("UPDATE EMPLOYEE SET FIRST_NAME = '" + myEmployee.getFirstName() + "',"
                     + "LAST_NAME = '" + myEmployee.getLastName() + "',"
                     + "USER_NAME = '" + myEmployee.getUsername() + "',"
                     + "JOB_TITLE = '" + myEmployee.getJobTitle() + "',"
@@ -375,7 +385,7 @@ public class CRUD {
     public boolean updateDishes(Dish myDish) {
         try {
             statment = connection.createStatement();
-            statment.executeQuery("UPDATE DISH SET DISH_NAME = '" + myDish.getName()+ "',"
+            statment.executeUpdate("UPDATE DISH SET DISH_NAME = '" + myDish.getName()+ "',"
                     + "PRICE = '" + myDish.getPrice() + "'"
                     + "DESCRIPTION = '" +myDish.getDescription() + "'"
                     + "WHERE DISH_ID = " + myDish.getDishID());
@@ -388,7 +398,7 @@ public class CRUD {
     public boolean updateCommand(Command myCommand) {
         try {
             statment = connection.createStatement();
-            statment.executeQuery("UPDATE EMPLOYEE SET DATE_COMMAND = '" + myCommand.getDateCommand()+ "',"
+            statment.executeUpdate("UPDATE EMPLOYEE SET DATE_COMMAND = '" + myCommand.getDateCommand()+ "',"
                     + "TOTAL = '" + myCommand.getTotal()+ "'"
                     + "WHERE COMMAND_ID = " + myCommand.getOrderID());
             return true;
@@ -400,7 +410,7 @@ public class CRUD {
     public boolean updateCommandDetails(CommandDetails myCommandDetails) {
         try {
             statment = connection.createStatement();
-            statment.executeQuery("UPDATE COMMAND_DETAILS SET COMMAND_ID = '" + myCommandDetails.getCommandID()+ "',"
+            statment.executeUpdate("UPDATE COMMAND_DETAILS SET COMMAND_ID = '" + myCommandDetails.getCommandID()+ "',"
                     + "QUANTITY = '" + myCommandDetails.getQuantity()+ "',"
                     + "DISH_ID = '" + myCommandDetails.getDishID()+ "',"
                     + "TABLE_NUM = '" + myCommandDetails.getTableNum()+ "',"
