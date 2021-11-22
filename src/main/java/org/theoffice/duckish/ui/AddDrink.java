@@ -32,38 +32,29 @@ public class AddDrink extends javax.swing.JFrame {
         TitleAddInfoDrink = new javax.swing.JLabel();
         NameDrink = new javax.swing.JLabel();
         PriceDrink = new javax.swing.JLabel();
-
         InNameDrinktxt = new javax.swing.JTextField();
         InPriceDrinktxt = new javax.swing.JTextField();
-
         btnBckAddDrink = new javax.swing.JButton();
         btnAddDrinkConfirm = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("AddDrink");
         setName("AddDrink"); // NOI18N
-
         setPreferredSize(new java.awt.Dimension(380, 400));
-
         setResizable(false);
 
         jPanelAddInfoDrink.setBackground(new java.awt.Color(180, 212, 222));
         jPanelAddInfoDrink.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
         jPanelAddInfoDrink.setPreferredSize(new java.awt.Dimension(380, 400));
 
-
         TitleAddInfoDrink.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        TitleAddInfoDrink.setForeground(new java.awt.Color(0, 0, 0));
         TitleAddInfoDrink.setText("Add drink's info");
 
-        NameDrink.setForeground(new java.awt.Color(0, 0, 0));
         NameDrink.setText("Name: ");
 
-        PriceDrink.setForeground(new java.awt.Color(0, 0, 0));
         PriceDrink.setText("Price: ");
 
-        btnBckAddDrink.setIcon(new javax.swing.ImageIcon("/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/back_2.png")); // NOI18N
+        btnBckAddDrink.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back_2.png"))); // NOI18N
         btnBckAddDrink.setPreferredSize(new java.awt.Dimension(50, 44));
         btnBckAddDrink.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,7 +62,7 @@ public class AddDrink extends javax.swing.JFrame {
             }
         });
 
-        btnAddDrinkConfirm.setIcon(new javax.swing.ImageIcon("/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/add.png")); // NOI18N
+        btnAddDrinkConfirm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
         btnAddDrinkConfirm.setPreferredSize(new java.awt.Dimension(50, 45));
         btnAddDrinkConfirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,8 +75,7 @@ public class AddDrink extends javax.swing.JFrame {
         jPanelAddInfoDrinkLayout.setHorizontalGroup(
             jPanelAddInfoDrinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAddInfoDrinkLayout.createSequentialGroup()
-
-                .addContainerGap(96, Short.MAX_VALUE)
+                .addContainerGap(123, Short.MAX_VALUE)
                 .addComponent(TitleAddInfoDrink)
                 .addGap(69, 69, 69))
             .addGroup(jPanelAddInfoDrinkLayout.createSequentialGroup()
@@ -124,7 +114,6 @@ public class AddDrink extends javax.swing.JFrame {
                     .addComponent(btnBckAddDrink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAddDrinkConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(113, Short.MAX_VALUE))
-
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

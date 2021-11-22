@@ -50,13 +50,10 @@ public class AddDish extends javax.swing.JFrame {
 
         jPanelAddInfoDish.setBackground(new java.awt.Color(180, 212, 222));
         jPanelAddInfoDish.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanelAddInfoDish.setForeground(new java.awt.Color(0, 0, 0));
 
         TitleAddInfoDish.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        TitleAddInfoDish.setForeground(new java.awt.Color(0, 0, 0));
         TitleAddInfoDish.setText("Add dish's info");
 
-        NameDish.setForeground(new java.awt.Color(0, 0, 0));
         NameDish.setText("Name Dish: ");
 
         InNameDishtxt.addActionListener(new java.awt.event.ActionListener() {
@@ -65,7 +62,6 @@ public class AddDish extends javax.swing.JFrame {
             }
         });
 
-        PiceDish.setForeground(new java.awt.Color(0, 0, 0));
         PiceDish.setText("Price: ");
 
         InPriceDishtxt.addActionListener(new java.awt.event.ActionListener() {
@@ -74,13 +70,10 @@ public class AddDish extends javax.swing.JFrame {
             }
         });
 
-        TypeDish.setForeground(new java.awt.Color(0, 0, 0));
         TypeDish.setText("Type: ");
 
-        ClaveDish.setForeground(new java.awt.Color(0, 0, 0));
         ClaveDish.setText("Clave: ");
 
-        QuantityDish.setForeground(new java.awt.Color(0, 0, 0));
         QuantityDish.setText("Quantity: ");
 
         InClaveDishtxt.addActionListener(new java.awt.event.ActionListener() {
@@ -89,7 +82,7 @@ public class AddDish extends javax.swing.JFrame {
             }
         });
 
-        btnBackAddDish.setIcon(new javax.swing.ImageIcon("/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/back_2.png")); // NOI18N
+        btnBackAddDish.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back_2.png"))); // NOI18N
         btnBackAddDish.setMinimumSize(new java.awt.Dimension(30, 30));
         btnBackAddDish.setPreferredSize(new java.awt.Dimension(50, 45));
         btnBackAddDish.addActionListener(new java.awt.event.ActionListener() {
@@ -98,7 +91,7 @@ public class AddDish extends javax.swing.JFrame {
             }
         });
 
-        bntAddDishConfirm.setIcon(new javax.swing.ImageIcon("/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/confirm.png")); // NOI18N
+        bntAddDishConfirm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
         bntAddDishConfirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bntAddDishConfirmActionPerformed(evt);

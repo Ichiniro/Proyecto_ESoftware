@@ -5,6 +5,8 @@
  */
 package org.theoffice.duckish.ui;
 
+
+
 /**
  *
  * @author al
@@ -37,7 +39,6 @@ public class AddDesserts extends javax.swing.JFrame {
         InNameDesserttxt = new javax.swing.JTextField();
         InPriceDesserttxt = new javax.swing.JTextField();
 
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(380, 400));
         setResizable(false);
@@ -47,16 +48,13 @@ public class AddDesserts extends javax.swing.JFrame {
         AddDessertPanel.setPreferredSize(new java.awt.Dimension(380, 400));
 
         TitleAddDessert.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        TitleAddDessert.setForeground(new java.awt.Color(0, 0, 0));
         TitleAddDessert.setText("Add dessert's info");
 
-        NameDessert.setForeground(new java.awt.Color(0, 0, 0));
         NameDessert.setText("Name: ");
 
-        PriceDessert.setForeground(new java.awt.Color(0, 0, 0));
         PriceDessert.setText("Price: ");
 
-        btnBackAddDessert.setIcon(new javax.swing.ImageIcon("/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/back_2.png")); // NOI18N
+        btnBackAddDessert.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back_2.png"))); // NOI18N
         btnBackAddDessert.setPreferredSize(new java.awt.Dimension(50, 45));
         btnBackAddDessert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,7 +62,7 @@ public class AddDesserts extends javax.swing.JFrame {
             }
         });
 
-        bntAddDessertConfirm.setIcon(new javax.swing.ImageIcon("/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/add.png")); // NOI18N
+        bntAddDessertConfirm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
         bntAddDessertConfirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bntAddDessertConfirmActionPerformed(evt);
@@ -82,7 +80,7 @@ public class AddDesserts extends javax.swing.JFrame {
         AddDessertPanelLayout.setHorizontalGroup(
             AddDessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddDessertPanelLayout.createSequentialGroup()
-                .addGap(49, 71, Short.MAX_VALUE)
+                .addGap(49, 103, Short.MAX_VALUE)
                 .addComponent(TitleAddDessert)
                 .addGap(66, 66, 66))
             .addGroup(AddDessertPanelLayout.createSequentialGroup()
@@ -101,7 +99,7 @@ public class AddDesserts extends javax.swing.JFrame {
                             .addComponent(PriceDessert)
                             .addGap(18, 18, 18)
                             .addComponent(InPriceDesserttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
         AddDessertPanelLayout.setVerticalGroup(
             AddDessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,7 +118,7 @@ public class AddDesserts extends javax.swing.JFrame {
                 .addGroup(AddDessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(bntAddDessertConfirm)
                     .addComponent(btnBackAddDessert, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

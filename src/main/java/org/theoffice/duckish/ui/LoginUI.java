@@ -8,6 +8,12 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+
+
+import org.theoffice.duckish.proc.CRUD;
+import org.theoffice.duckish.obj.Employee;
+import org.theoffice.duckish.proc.DButilities;
 
 public class LoginUI extends JFrame {
 
@@ -55,15 +61,19 @@ public class LoginUI extends JFrame {
         logIn.setFocusPainted(false);
         logIn.setBounds(100, 350, 200, 40);
         logIn.addActionListener(e -> {
-            String username = usernameTF.getText();
-            String password = String.valueOf(passwordTF.getPassword());
-
-            boolean x = new Login().login(username, password);
-            if (!x) {
-                JOptionPane.showMessageDialog(this, "Incorrect login credentials");
+            
+            CRUD myCRUD = new CRUD("root","902020");//Cambiar esto
+            myCRUD.connect();
+            myCRUD.useDataBase();
+            Employee emp = myCRUD.searchEmployee(usernameTF.getText());
+            String hash = DButilities.encriptPWD(String.valueOf(passwordTF.getPassword()));
+            if (emp.getPassword().equals(hash)) {
+                SystemUI myS = new SystemUI();
+                myS.setVisible(true);
+                this.dispose();
             } else {
-                // TODO
-                System.err.println("Open new window here");
+                JOptionPane.showMessageDialog(null,
+                                "Incorrect Credentials. Press ok to cotinue.");
             }
         });
         add(logIn);

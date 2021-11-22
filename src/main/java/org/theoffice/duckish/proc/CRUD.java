@@ -50,47 +50,54 @@ public class CRUD {
             return false;
         }
     }
+    public boolean useDataBase(){
+        try {
+            statment = connection.createStatement();
+            statment.executeQuery("use DUCKISH");
+            return true;
+        }catch(SQLException e){
+            return false;
+        }
+    }
 
     public boolean creatTables(){
         try {
             statment = connection.createStatement();
-            statment.executeUpdate("create table if not exists employees("
-                    + "employee_id int auto_increment,"
-                    + "first_name varchar(50),"
-                    + "last_name varchar(50),"
-                    + "user_name varchar(50) not null ,"
-                    + "job_title varchar(50) not null ,"
-                    + "pasword_user varchar(65) not null ,"
-                    + "primary key (employee_id)"
-                    + ");");
+            statment.executeUpdate("create table if not exists EMPLOYEES("
+                    + "EMPLOYEE_ID int auto_increment,"
+                    + "FIRST_NAME varchar(50),"
+                    + "LAST_NAME varchar(50),"
+                    + "USER_NAME varchar(50) not null ,"
+                    + "JOB_TITLE varchar(50) not null ,"
+                    + "PASSWORD_USER varchar(65) not null ,"
+                    + "primary key (EMPLOYEE_ID)"
+                    + ")");
             
-            /*statment.execute("CREATE TABLE IF NOT EXISTS DISHES("
+            statment.executeUpdate("CREATE TABLE IF NOT EXISTS DISHES("
                     + "DISH_ID INT auto_increment,"
                     + "DISH_NAME VARCHAR(75) NOT NULL,"
                     + "PRICE FLOAT NOT NULL,"
                     + "DESCRIPTION TEXT NOT NULL,"
-                    + "primary key (dish_id)"
+                    + "primary key (DISH_ID)"
                     + ");");
-            connection.close();
-            statment.execute("CREATE TABLE IF NOT EXISTS COMMAND("
+
+            statment.executeUpdate("CREATE TABLE IF NOT EXISTS COMMAND("
                     + "COMMAND_ID INT NOT NULL,"
                     + "DATE_COMMAND DATE,"
                     + "TOTAL FLOAT NOT NULL,"
-                    + "primary key (command_id)"
+                    + "primary key (COMMAND_ID)"
                     + ");");
-            connection.close();
-            statment.execute("CREATE TABLE IF NOT EXISTS COMMAND_DETAILS("
+            statment.executeUpdate("CREATE TABLE IF NOT EXISTS COMMAND_DETAILS("
                     + "COMMAND_DETAILS_ID INT auto_increment,"
                     + "COMMAND_ID INT,"
                     + "QUANTITY INT NOT NULL,"
                     + "DISH_ID INT NOT NULL,"
                     + "TABLE_NUM INT NOT NULL,"
                     + "EMPLOYEE_ID INT NOT NULL,"
-                    + "primary key (command_details_id),"
-                    + "foreign key (dish_id) references dishes(dish_id),"
-                    + "foreign key (employee_id) references employees(employee_id)"
+                    + "primary key (COMMAND_DETAILS_ID),"
+                    + "foreign key (DISH_ID) references DISHES(DISH_ID),"
+                    + "foreign key (EMPLOYEE_ID) references EMPLOYEES(EMPLOYEE_ID)"
                     + ");");
-            connection.close();*/
             return true;
         } catch (SQLException e) {
             return false;
@@ -113,12 +120,13 @@ public class CRUD {
     public boolean addEmployee(Employee myEmployee) {
         try {
             statment = connection.createStatement();
-            statment.executeUpdate("INSERT INTO EMPLOYEES (FIRST_NAME,LAST_NAME,USER_NAME,JOB_TITTLE,PASSWORD_USER) VALUES ('"
-                    + myEmployee.getFirstName() + "'," + myEmployee.getLastName()
-                    + ",'" + myEmployee.getUsername() + "'," + myEmployee.getJobTitle()
-                    + ",'" + myEmployee.getPassword() + "')");
+            statment.executeUpdate("INSERT INTO EMPLOYEES (FIRST_NAME,LAST_NAME,USER_NAME,JOB_TITLE,PASSWORD_USER) VALUES ('"
+                    + myEmployee.getFirstName() + "','" + myEmployee.getLastName()
+                    + "','" + myEmployee.getUsername() + "','" + myEmployee.getJobTitle()
+                    + "','" + myEmployee.getPassword() + "')");
             return true;
         } catch (SQLException e) {
+            e.printStackTrace();
             return false;
         }
     }
@@ -162,7 +170,7 @@ public class CRUD {
                 myEmployee.setFirstName(result.getString("FIRST_NAME"));
                 myEmployee.setLastName(result.getString("LAST_NAME"));
                 myEmployee.setUsername(result.getString("USER_NAME"));
-                myEmployee.setJobTitle(result.getString("JOB_TITTLE"));
+                myEmployee.setJobTitle(result.getString("JOB_TITLE"));
                 Employees.add(myEmployee);
             }
         } catch (SQLException e) {
@@ -228,9 +236,9 @@ public class CRUD {
         return CommandsDetails;
     }
 
-    public ArrayList searchEmployee(String search) {
-        ArrayList Employees = new ArrayList();
-
+    public Employee searchEmployee(String search) {
+        
+        Employee myEmployee = new Employee();
         try {
             statment = connection.createStatement();
             result = statment.executeQuery("SELECT * FROM EMPLOYEES WHERE EMPLOYEE_ID LIKE "
@@ -241,21 +249,22 @@ public class CRUD {
                     + "'%" + search + "%' " + " or PASSWORD_USER LIKE "
                     + "'%" + search + "%' ");
             while (result.next()) {
-                Employee myEmployee = new Employee();
+                
                 myEmployee.setEmployeeID(result.getInt("EMPLOYEE_ID"));
                 myEmployee.setFirstName(result.getString("FIRST_NAME"));
                 myEmployee.setLastName(result.getString("LAST_NAME"));
                 myEmployee.setUsername(result.getString("USER_NAME"));
-                myEmployee.setJobTitle(result.getString("JOB_TITTLE"));
+                myEmployee.setJobTitle(result.getString("JOB_TITLE"));
                 myEmployee.setPassword(result.getString("PASSWORD_USER"));//could be this is a problem
-                Employees.add(myEmployee);
+                
             }
 
         } catch (SQLException e) {
+            e.printStackTrace();
             return null;
         }
 
-        return Employees;
+        return myEmployee;
     }
 
     public ArrayList searchDish(String search) {

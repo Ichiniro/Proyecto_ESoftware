@@ -46,17 +46,12 @@ public class SystemUI extends javax.swing.JFrame {
         jPanelDishes = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableDishesList = new javax.swing.JTable();
-
         jPanelDrinks = new javax.swing.JPanel();
-
         jScrollPane6 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jPanelDesserts = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTableDessertsList = new javax.swing.JTable();
-
-        btnDeleteDesserts = new javax.swing.JButton();
-        btnAddDressert = new javax.swing.JButton();
         jPanelEmployees = new javax.swing.JPanel();
         jPanelAddEmployee = new javax.swing.JPanel();
         FirstName = new javax.swing.JLabel();
@@ -83,7 +78,6 @@ public class SystemUI extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         btnAdminDeleteEmployee = new javax.swing.JButton();
-
         jPanelTicketPreviwe = new javax.swing.JPanel();
         btnPrintTicket = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -99,21 +93,18 @@ public class SystemUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Duckish");
-        setMaximumSize(new java.awt.Dimension(1280, 800));
         setName("SystemUI"); // NOI18N
-
         setResizable(false);
         setSize(new java.awt.Dimension(1280, 800));
 
         SystemLogo.setBackground(new java.awt.Color(13, 70, 87));
         SystemLogo.setForeground(new java.awt.Color(11, 59, 74));
-
-        SystemLogo.setIcon(new javax.swing.ImageIcon("/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/logo_mini.png")); // NOI18N
+        SystemLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo_mini.png"))); // NOI18N
 
         titlePanel.setBackground(new java.awt.Color(11, 59, 74));
 
         btnUsers.setBackground(new java.awt.Color(11, 59, 74));
-        btnUsers.setIcon(new javax.swing.ImageIcon("/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/user.png")); // NOI18N
+        btnUsers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user.png"))); // NOI18N
         btnUsers.setComponentPopupMenu(MenuUserPop);
         btnUsers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,7 +113,7 @@ public class SystemUI extends javax.swing.JFrame {
         });
 
         btmSettings.setBackground(new java.awt.Color(11, 59, 74));
-        btmSettings.setIcon(new javax.swing.ImageIcon("/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/tools.png")); // NOI18N
+        btmSettings.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tools.png"))); // NOI18N
         btmSettings.setPreferredSize(new java.awt.Dimension(55, 45));
         btmSettings.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,7 +122,7 @@ public class SystemUI extends javax.swing.JFrame {
         });
 
         btnKitchen.setBackground(new java.awt.Color(11, 59, 74));
-        btnKitchen.setIcon(new javax.swing.ImageIcon("/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/chef.png")); // NOI18N
+        btnKitchen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/chef.png"))); // NOI18N
         btnKitchen.setPreferredSize(new java.awt.Dimension(55, 45));
         btnKitchen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,7 +166,7 @@ public class SystemUI extends javax.swing.JFrame {
         ));
         jScrollPane5.setViewportView(jTable1);
 
-        btnAddTableList.setIcon(new javax.swing.ImageIcon("/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/confirm.png")); // NOI18N
+        btnAddTableList.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/confirm.png"))); // NOI18N
         btnAddTableList.setMaximumSize(new java.awt.Dimension(50, 45));
         btnAddTableList.setMinimumSize(new java.awt.Dimension(30, 30));
         btnAddTableList.setPreferredSize(new java.awt.Dimension(50, 45));
@@ -185,7 +176,7 @@ public class SystemUI extends javax.swing.JFrame {
             }
         });
 
-        btnDeleteTable.setIcon(new javax.swing.ImageIcon("/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/remove.png")); // NOI18N
+        btnDeleteTable.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/deleteSmall.png"))); // NOI18N
         btnDeleteTable.setMinimumSize(new java.awt.Dimension(30, 30));
         btnDeleteTable.setPreferredSize(new java.awt.Dimension(55, 45));
 
@@ -266,7 +257,6 @@ public class SystemUI extends javax.swing.JFrame {
         jPanelDishesLayout.setHorizontalGroup(
             jPanelDishesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelDishesLayout.createSequentialGroup()
-
                 .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 712, Short.MAX_VALUE)
                 .addContainerGap())
@@ -322,41 +312,17 @@ public class SystemUI extends javax.swing.JFrame {
         jTableDessertsList.setPreferredSize(new java.awt.Dimension(515, 800));
         jScrollPane4.setViewportView(jTableDessertsList);
 
-        btnDeleteDesserts.setIcon(new javax.swing.ImageIcon("/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/remove.png")); // NOI18N
-        btnDeleteDesserts.setPreferredSize(new java.awt.Dimension(50, 45));
-
-        btnAddDressert.setIcon(new javax.swing.ImageIcon("/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/add.png")); // NOI18N
-
-        btnAddDressert.setMinimumSize(new java.awt.Dimension(30, 30));
-        btnAddDressert.setPreferredSize(new java.awt.Dimension(50, 45));
-        btnAddDressert.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddDressertActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanelDessertsLayout = new javax.swing.GroupLayout(jPanelDesserts);
         jPanelDesserts.setLayout(jPanelDessertsLayout);
         jPanelDessertsLayout.setHorizontalGroup(
             jPanelDessertsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelDessertsLayout.createSequentialGroup()
-                .addGap(177, 177, 177)
-                .addComponent(btnAddDressert, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(223, 223, 223)
-                .addComponent(btnDeleteDesserts, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(224, Short.MAX_VALUE))
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 721, Short.MAX_VALUE)
         );
         jPanelDessertsLayout.setVerticalGroup(
             jPanelDessertsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelDessertsLayout.createSequentialGroup()
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanelDessertsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnDeleteDesserts, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAddDressert, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
-
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         PrincipalTabbed.addTab("Desserts", jPanelDesserts);
@@ -373,7 +339,6 @@ public class SystemUI extends javax.swing.JFrame {
 
         InJobTitleAddEmployetxt.setAutoscrolls(false);
 
-        btnAddEmployee.setIcon(new javax.swing.ImageIcon("/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/addMini.png")); // NOI18N
         btnAddEmployee.setText("Add");
         btnAddEmployee.setToolTipText("");
 
@@ -469,7 +434,7 @@ public class SystemUI extends javax.swing.JFrame {
 
         jLabel2.setText("Add Drinks");
 
-        btnAddDrink1.setIcon(new javax.swing.ImageIcon("/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/add.png")); // NOI18N
+        btnAddDrink1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
         btnAddDrink1.setPreferredSize(new java.awt.Dimension(50, 45));
         btnAddDrink1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -504,7 +469,7 @@ public class SystemUI extends javax.swing.JFrame {
 
         jLabel1.setText("Add Dishes");
 
-        btnAddDish.setIcon(new javax.swing.ImageIcon("/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/add.png")); // NOI18N
+        btnAddDish.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
         btnAddDish.setMaximumSize(new java.awt.Dimension(50, 45));
         btnAddDish.setMinimumSize(new java.awt.Dimension(30, 30));
         btnAddDish.setPreferredSize(new java.awt.Dimension(50, 45));
@@ -541,7 +506,7 @@ public class SystemUI extends javax.swing.JFrame {
 
         jLabel3.setText("Add Desserts");
 
-        btnAddDrink.setIcon(new javax.swing.ImageIcon("/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/add.png")); // NOI18N
+        btnAddDrink.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
         btnAddDrink.setPreferredSize(new java.awt.Dimension(50, 45));
         btnAddDrink.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -554,14 +519,11 @@ public class SystemUI extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(jLabel3))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(btnAddDrink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addGap(16, 16, 16)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnAddDrink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -596,7 +558,7 @@ public class SystemUI extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(btnAdminDeleteEmployee)))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -644,7 +606,7 @@ public class SystemUI extends javax.swing.JFrame {
         jPanelTicketPreviwe.setMaximumSize(new java.awt.Dimension(289, 90));
         jPanelTicketPreviwe.setName(""); // NOI18N
 
-        btnPrintTicket.setIcon(new javax.swing.ImageIcon("/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/printer.png")); // NOI18N
+        btnPrintTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer.png"))); // NOI18N
         btnPrintTicket.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPrintTicketActionPerformed(evt);
@@ -670,7 +632,7 @@ public class SystemUI extends javax.swing.JFrame {
         jPanelTicketPreviweLayout.setHorizontalGroup(
             jPanelTicketPreviweLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelTicketPreviweLayout.createSequentialGroup()
-                .addContainerGap(76, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnPrintTicket)
                 .addGap(75, 75, 75))
             .addGroup(jPanelTicketPreviweLayout.createSequentialGroup()
@@ -717,7 +679,6 @@ public class SystemUI extends javax.swing.JFrame {
                         .addGap(0, 23, Short.MAX_VALUE))
                     .addComponent(titlePanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(PrincipalTabbed, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanelTicketPreviwe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -765,14 +726,6 @@ public class SystemUI extends javax.swing.JFrame {
     private void btnUsersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsersActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnUsersActionPerformed
-
-    private void btnAddDressertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDressertActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-        AddDesserts add = new AddDesserts();
-        add.setVisible(true);
-
-    }//GEN-LAST:event_btnAddDressertActionPerformed
 
     private void SingoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SingoutActionPerformed
         // TODO add your handling code here:
@@ -844,7 +797,6 @@ public class SystemUI extends javax.swing.JFrame {
     private javax.swing.JTextField InLastNameAddEmploye;
     private javax.swing.JTextField InUserNameAddEmployetxt;
     private javax.swing.JLabel JobTitle;
-
     private javax.swing.JPopupMenu MenuUserPop;
     private javax.swing.JTabbedPane PrincipalTabbed;
     private javax.swing.JMenuItem Singout;
@@ -855,19 +807,15 @@ public class SystemUI extends javax.swing.JFrame {
     private javax.swing.JLabel addLastName;
     private javax.swing.JButton btmSettings;
     private javax.swing.JButton btnAddDish;
-    private javax.swing.JButton btnAddDressert;
     private javax.swing.JButton btnAddDrink;
-
     private javax.swing.JButton btnAddDrink1;
     private javax.swing.JButton btnAddEmployee;
     private javax.swing.JButton btnAddTableList;
     private javax.swing.JButton btnAdminDeleteEmployee;
-    private javax.swing.JButton btnDeleteDesserts;
     private javax.swing.JButton btnDeleteTable;
     private javax.swing.JButton btnKitchen;
     private javax.swing.JButton btnPrintTicket;
     private javax.swing.JButton btnUsers;
-
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -882,7 +830,6 @@ public class SystemUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelDishes;
     private javax.swing.JPanel jPanelDrinks;
     private javax.swing.JPanel jPanelEmployees;
-
     private javax.swing.JPanel jPanelTicketPreviwe;
     private javax.swing.JPanel jPannelTables;
     private javax.swing.JScrollPane jScrollPane1;
@@ -891,9 +838,7 @@ public class SystemUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-
     private javax.swing.JScrollPane jScrollPane7;
-
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;

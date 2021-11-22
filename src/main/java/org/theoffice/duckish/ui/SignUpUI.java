@@ -121,12 +121,14 @@ public class SignUpUI extends JFrame {
                         CRUD myCRUD = new CRUD("root","902020");//Cambiar esto
                         myCRUD.connect();
                         myCRUD.creatDB();
+                        myCRUD.useDataBase();
                         myCRUD.creatTables();
                         if (myCRUD.addEmployee(employee)) {
                             JOptionPane.showMessageDialog(null,
                                 "Account created succesfully. Press ok to cotinue.");
                             this.dispose();
-                            new SystemUI();
+                            SystemUI myS = new SystemUI();
+                            myS.setVisible(true);
                         } else {
                             JOptionPane.showMessageDialog(null,
                                 "Error in Data Base. Press ok to cotinue.");

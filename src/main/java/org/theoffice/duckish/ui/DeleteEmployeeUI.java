@@ -46,23 +46,19 @@ public class DeleteEmployeeUI extends javax.swing.JFrame {
 
         jPanelDeleteEmploye.setBackground(new java.awt.Color(180, 212, 222));
         jPanelDeleteEmploye.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanelDeleteEmploye.setForeground(new java.awt.Color(0, 0, 0));
         jPanelDeleteEmploye.setToolTipText("");
         jPanelDeleteEmploye.setAutoscrolls(true);
         jPanelDeleteEmploye.setMaximumSize(new java.awt.Dimension(380, 400));
 
         TitleDeleteEmployee.setBackground(new java.awt.Color(0, 0, 0));
         TitleDeleteEmployee.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        TitleDeleteEmployee.setForeground(new java.awt.Color(0, 0, 0));
         TitleDeleteEmployee.setText("Delete Employe");
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Name: ");
 
-        EmployLastName.setForeground(new java.awt.Color(0, 0, 0));
         EmployLastName.setText("Last name");
 
-        bckDeleteEmploye.setIcon(new javax.swing.ImageIcon("/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/back_2.png")); // NOI18N
+        bckDeleteEmploye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back_2.png"))); // NOI18N
         bckDeleteEmploye.setMaximumSize(new java.awt.Dimension(50, 45));
         bckDeleteEmploye.setMinimumSize(new java.awt.Dimension(30, 30));
         bckDeleteEmploye.setPreferredSize(new java.awt.Dimension(50, 45));
@@ -82,10 +78,8 @@ public class DeleteEmployeeUI extends javax.swing.JFrame {
             }
         });
 
-        LastName.setForeground(new java.awt.Color(0, 0, 0));
         LastName.setText("UserName");
 
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Job");
         jLabel4.setToolTipText("");
 
