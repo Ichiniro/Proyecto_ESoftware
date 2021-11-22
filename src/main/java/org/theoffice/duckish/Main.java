@@ -2,7 +2,6 @@ package org.theoffice.duckish;
 
 import org.theoffice.duckish.ext.SetUI;
 import org.theoffice.duckish.ext.SetUIFont;
-import org.theoffice.duckish.proc.MariaDB;
 import org.theoffice.duckish.proc.Start;
 
 import javax.swing.*;
