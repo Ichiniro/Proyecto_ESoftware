@@ -103,13 +103,11 @@ public class SignUpUI extends JFrame {
 
             String warning = "";
             if (!pwdFlag) {
-                warning = """
-                        Invalid password. Make sure both fields match.
-                        All paswords must:
-                        - At lest 8 charachters long, maximum 20
-                        - Include a lowercase and an uppercase character
-                        - Include a number
-                        - Include a special character""";
+                warning = "Invalid password. Make sure both fields match. All paswords must:\n"
+                        + "- At lest 8 charachters long, maximum 20\n"
+                        + "- Include a lowercase and an uppercase character\n"
+                        + "- Include a number\n"
+                        + "- Include a special character";
             }
 
             if (!usrFlag) {
@@ -120,7 +118,7 @@ public class SignUpUI extends JFrame {
             if (pwdFlag && usrFlag) {
                 try {
                     if (employee.isValid()) {
-                        CRUD myCRUD = new CRUD("root","902020");//Cambiar esto
+                        CRUD myCRUD = new CRUD("ichi","gc");//Cambiar esto
                         myCRUD.connect();
                         myCRUD.creatDB();
                         myCRUD.creatTables();

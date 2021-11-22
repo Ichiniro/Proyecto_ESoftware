@@ -1,11 +1,7 @@
 /*This class is used to Creat Read Update and Delete in a mysql database*/
 package org.theoffice.duckish.proc;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.sql.SQLException;
+import java.sql.*;
 import org.theoffice.duckish.obj.*;
 import java.util.ArrayList;
 import org.theoffice.duckish.proc.DButilities;
@@ -15,7 +11,7 @@ public class CRUD {
     private static Connection connection;
     private static Statement statment;
     private static ResultSet result;
-    private static final String url = "jdbc:mysql://localhost:3306/duckish";
+    private static final String url = "jdbc:mysql://localhost:3306";
     private final String user;
     private final String password;
 
@@ -29,7 +25,7 @@ public class CRUD {
 
     public boolean connect() {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName("org.mariadb.jdbc.Driver");
             connection = DriverManager.getConnection(url,user,password);
             System.out.println("Connection Successful");
             return connection != null;
@@ -48,7 +44,7 @@ public class CRUD {
     public boolean creatDB() {
         try {
             statment = connection.createStatement();
-            statment.executeQuery("CREATE DATABASE DUCKISH IF NOT EXISTS");
+            statment.executeUpdate("CREATE DATABASE IF NOT EXISTS DUCKISH");
             return true;
         } catch (SQLException e) {
             return false;
