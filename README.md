@@ -29,7 +29,7 @@ Desarrollo del proyecto final de la materia Ingeniería de Software de la carrer
 - VS Code
 
 
-## __Intengrantes del equipo__
+## __Integrantes del equipo__
 
 <table align="center">
 	<tr>

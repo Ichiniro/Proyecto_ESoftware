@@ -46,12 +46,15 @@ public class SystemUI extends javax.swing.JFrame {
         jPanelDishes = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableDishesList = new javax.swing.JTable();
+
         jPanelDrinks = new javax.swing.JPanel();
+
         jScrollPane6 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jPanelDesserts = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTableDessertsList = new javax.swing.JTable();
+
         btnDeleteDesserts = new javax.swing.JButton();
         btnAddDressert = new javax.swing.JButton();
         jPanelEmployees = new javax.swing.JPanel();
@@ -80,6 +83,7 @@ public class SystemUI extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         btnAdminDeleteEmployee = new javax.swing.JButton();
+
         jPanelTicketPreviwe = new javax.swing.JPanel();
         btnPrintTicket = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -97,11 +101,13 @@ public class SystemUI extends javax.swing.JFrame {
         setTitle("Duckish");
         setMaximumSize(new java.awt.Dimension(1280, 800));
         setName("SystemUI"); // NOI18N
+
         setResizable(false);
         setSize(new java.awt.Dimension(1280, 800));
 
         SystemLogo.setBackground(new java.awt.Color(13, 70, 87));
         SystemLogo.setForeground(new java.awt.Color(11, 59, 74));
+
         SystemLogo.setIcon(new javax.swing.ImageIcon("/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/logo_mini.png")); // NOI18N
 
         titlePanel.setBackground(new java.awt.Color(11, 59, 74));
@@ -260,6 +266,7 @@ public class SystemUI extends javax.swing.JFrame {
         jPanelDishesLayout.setHorizontalGroup(
             jPanelDishesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelDishesLayout.createSequentialGroup()
+
                 .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 712, Short.MAX_VALUE)
                 .addContainerGap())
@@ -319,6 +326,7 @@ public class SystemUI extends javax.swing.JFrame {
         btnDeleteDesserts.setPreferredSize(new java.awt.Dimension(50, 45));
 
         btnAddDressert.setIcon(new javax.swing.ImageIcon("/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/add.png")); // NOI18N
+
         btnAddDressert.setMinimumSize(new java.awt.Dimension(30, 30));
         btnAddDressert.setPreferredSize(new java.awt.Dimension(50, 45));
         btnAddDressert.addActionListener(new java.awt.event.ActionListener() {
@@ -348,6 +356,7 @@ public class SystemUI extends javax.swing.JFrame {
                     .addComponent(btnDeleteDesserts, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAddDressert, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(18, Short.MAX_VALUE))
+
         );
 
         PrincipalTabbed.addTab("Desserts", jPanelDesserts);
@@ -708,6 +717,7 @@ public class SystemUI extends javax.swing.JFrame {
                         .addGap(0, 23, Short.MAX_VALUE))
                     .addComponent(titlePanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(PrincipalTabbed, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanelTicketPreviwe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -771,6 +781,7 @@ public class SystemUI extends javax.swing.JFrame {
         setStart.setVisible(true);
     }//GEN-LAST:event_SingoutActionPerformed
 
+
     private void btnAddDrink1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDrink1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAddDrink1ActionPerformed
@@ -782,6 +793,7 @@ public class SystemUI extends javax.swing.JFrame {
         delGo.setVisible(true);
         
     }//GEN-LAST:event_btnAdminDeleteEmployeeActionPerformed
+
 
     
     
@@ -832,6 +844,7 @@ public class SystemUI extends javax.swing.JFrame {
     private javax.swing.JTextField InLastNameAddEmploye;
     private javax.swing.JTextField InUserNameAddEmployetxt;
     private javax.swing.JLabel JobTitle;
+
     private javax.swing.JPopupMenu MenuUserPop;
     private javax.swing.JTabbedPane PrincipalTabbed;
     private javax.swing.JMenuItem Singout;
@@ -844,6 +857,7 @@ public class SystemUI extends javax.swing.JFrame {
     private javax.swing.JButton btnAddDish;
     private javax.swing.JButton btnAddDressert;
     private javax.swing.JButton btnAddDrink;
+
     private javax.swing.JButton btnAddDrink1;
     private javax.swing.JButton btnAddEmployee;
     private javax.swing.JButton btnAddTableList;
@@ -853,6 +867,7 @@ public class SystemUI extends javax.swing.JFrame {
     private javax.swing.JButton btnKitchen;
     private javax.swing.JButton btnPrintTicket;
     private javax.swing.JButton btnUsers;
+
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -867,6 +882,7 @@ public class SystemUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelDishes;
     private javax.swing.JPanel jPanelDrinks;
     private javax.swing.JPanel jPanelEmployees;
+
     private javax.swing.JPanel jPanelTicketPreviwe;
     private javax.swing.JPanel jPannelTables;
     private javax.swing.JScrollPane jScrollPane1;
@@ -875,7 +891,9 @@ public class SystemUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+
     private javax.swing.JScrollPane jScrollPane7;
+
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;

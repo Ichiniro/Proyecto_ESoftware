@@ -37,6 +37,7 @@ public class AddDesserts extends javax.swing.JFrame {
         InNameDesserttxt = new javax.swing.JTextField();
         InPriceDesserttxt = new javax.swing.JTextField();
 
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(380, 400));
         setResizable(false);

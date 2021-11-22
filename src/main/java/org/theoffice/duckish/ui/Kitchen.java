@@ -39,7 +39,9 @@ public class Kitchen extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(1280, 800));
         setResizable(false);
 
+
         jButton1.setIcon(new javax.swing.ImageIcon("/home/al/Escritorio/GitHub/Proyecto_ESoftware/src/main/java/org/theoffice/duckish/ui/images/regreso.png")); // NOI18N
+
         jButton1.setPreferredSize(new java.awt.Dimension(50, 45));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
