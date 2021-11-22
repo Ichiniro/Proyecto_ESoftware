@@ -1,3 +1,4 @@
+
 plugins {
     id 'java'
     id "org.sonarqube" version "3.3"
@@ -8,12 +9,24 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    jcenter()
 }
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
-    implementation "mysql:mysql-connector-java:6.0.6"
+
+
+    // This dependency is used internally, and not exposed to consumers on their own compile classpath.
+    implementation 'com.google.guava:guava:22.0'
+
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+	
+    implementation 'org.mariadb.jdbc:mariadb-java-client:2.1.2'
 }
 
 test {

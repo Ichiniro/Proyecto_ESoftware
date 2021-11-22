@@ -39,7 +39,7 @@ public class AddDesserts extends javax.swing.JFrame {
         bntAddDessertConfirm = new javax.swing.JButton();
         InNameDesserttxt = new javax.swing.JTextField();
         InPriceDesserttxt = new javax.swing.JTextField();
-        InTypédesserttxt = new javax.swing.JTextField();
+        InTypÃ©desserttxt = new javax.swing.JTextField();
         InClaveDesserttxt = new javax.swing.JTextField();
         InQuantityDesserttxt = new javax.swing.JTextField();
 
@@ -88,7 +88,7 @@ public class AddDesserts extends javax.swing.JFrame {
         AddDessertPanelLayout.setHorizontalGroup(
             AddDessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddDessertPanelLayout.createSequentialGroup()
-                .addGap(49, 103, Short.MAX_VALUE)
+                .addGap(49, 71, Short.MAX_VALUE)
                 .addComponent(TitleAddDessert)
                 .addGap(66, 66, 66))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddDessertPanelLayout.createSequentialGroup()
@@ -108,7 +108,7 @@ public class AddDesserts extends javax.swing.JFrame {
                             .addGroup(AddDessertPanelLayout.createSequentialGroup()
                                 .addComponent(TypeDessert)
                                 .addGap(18, 18, 18)
-                                .addComponent(InTypédesserttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(InTypÃ©desserttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(AddDessertPanelLayout.createSequentialGroup()
                                 .addComponent(QuantityDessert)
                                 .addGap(18, 18, 18)
@@ -142,7 +142,7 @@ public class AddDesserts extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(AddDessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TypeDessert)
-                    .addComponent(InTypédesserttxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(InTypÃ©desserttxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(AddDessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ClaveDessert)
@@ -151,7 +151,7 @@ public class AddDesserts extends javax.swing.JFrame {
                 .addGroup(AddDessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(QuantityDessert)
                     .addComponent(InQuantityDesserttxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
                 .addGroup(AddDessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnBackAddDessert, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bntAddDessertConfirm, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -234,7 +234,7 @@ public class AddDesserts extends javax.swing.JFrame {
     private javax.swing.JTextField InNameDesserttxt;
     private javax.swing.JTextField InPriceDesserttxt;
     private javax.swing.JTextField InQuantityDesserttxt;
-    private javax.swing.JTextField InTypédesserttxt;
+    private javax.swing.JTextField InTypÃ©desserttxt;
     private javax.swing.JLabel NameDessert;
     private javax.swing.JLabel PriceDessert;
     private javax.swing.JLabel QuantityDessert;
