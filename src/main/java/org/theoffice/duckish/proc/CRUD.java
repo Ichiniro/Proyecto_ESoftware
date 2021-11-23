@@ -113,12 +113,13 @@ public class CRUD {
     public boolean addDish(Dish myDish) {
         try {
             statment = connection.createStatement();
-            statment.executeUpdate("INSERT INTO DISHES (DISH_NAME,PRICE) VALUES ('"
+            statment.executeUpdate("INSERT INTO DISHES (DISH_NAME,DESCRIPTION,PRICE) VALUES ('"
                     + myDish.getName() + "','"
                     + myDish.getDescription() + "','"
                     + myDish.getPrice() + "')");
             return true;
         } catch (SQLException e) {
+            e.printStackTrace();
             return false;
         }
     }
@@ -200,11 +201,49 @@ public class CRUD {
         return Employees;
     }
 
-    public ArrayList getDishes() {
+    public ArrayList getDishesDish() {
         ArrayList Dishes = new ArrayList();
         try {
             statment = connection.createStatement();
-            result = statment.executeQuery("SELECT * FROM DISHES");
+            result = statment.executeQuery("SELECT * FROM DISHES WHERE DESCRIPTION LIKE '%Dish%'");
+            while (result.next()) {
+                Dish myDish = new Dish();
+                myDish.setDishID(result.getInt("DISH_ID"));
+                myDish.setName(result.getString("DISH_NAME"));
+                myDish.setPrice(result.getFloat("PRICE"));
+                myDish.setDescription(result.getString("DESCRIPTION"));
+                Dishes.add(myDish);
+            }
+        } catch (SQLException e) {
+            return null;
+        }
+        return Dishes;
+    }
+    
+    public ArrayList getDishesDrink() {
+        ArrayList Dishes = new ArrayList();
+        try {
+            statment = connection.createStatement();
+            result = statment.executeQuery("SELECT * FROM DISHES WHERE DESCRIPTION LIKE '%Drink%'");
+            while (result.next()) {
+                Dish myDish = new Dish();
+                myDish.setDishID(result.getInt("DISH_ID"));
+                myDish.setName(result.getString("DISH_NAME"));
+                myDish.setPrice(result.getFloat("PRICE"));
+                myDish.setDescription(result.getString("DESCRIPTION"));
+                Dishes.add(myDish);
+            }
+        } catch (SQLException e) {
+            return null;
+        }
+        return Dishes;
+    }
+    
+    public ArrayList getDishesDesserts() {
+        ArrayList Dishes = new ArrayList();
+        try {
+            statment = connection.createStatement();
+            result = statment.executeQuery("SELECT * FROM DISHES WHERE DESCRIPTION LIKE '%Dessert%'");
             while (result.next()) {
                 Dish myDish = new Dish();
                 myDish.setDishID(result.getInt("DISH_ID"));

@@ -1,19 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.theoffice.duckish.ui;
 
-/**
- *
- * @author al
- */
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
+import org.theoffice.duckish.obj.Dish;
+import org.theoffice.duckish.proc.CRUD;
+
 public class AddDish extends javax.swing.JFrame {
 
     /**
      * Creates new form AddDish
      */
+    CRUD myCRUD = new CRUD("root", "902020");
     public AddDish() {
         initComponents();
         setLocationRelativeTo(null);
@@ -61,6 +58,11 @@ public class AddDish extends javax.swing.JFrame {
         InPriceDishtxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 InPriceDishtxtActionPerformed(evt);
+            }
+        });
+        InPriceDishtxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                InPriceDishtxtKeyTyped(evt);
             }
         });
 
@@ -160,8 +162,39 @@ public class AddDish extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBackAddDishActionPerformed
 
     private void bntAddDishConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntAddDishConfirmActionPerformed
-        // TODO add your handling code here:
+        Dish myDish = new Dish();
+        if (InNameDishtxt.getText().trim().equals("")
+                && (InPriceDishtxt.getText().trim().equals(""))) {
+
+        }
+        if (myCRUD.connect()) {
+            myDish.setName(InNameDishtxt.getText());
+            myDish.setPrice(Float.parseFloat(InPriceDishtxt.getText()));
+            myDish.setDescription("Dish");
+            myCRUD.connect();
+            myCRUD.useDataBase();
+            if (myCRUD.addDish(myDish)) {
+                JOptionPane.showMessageDialog(null, "The dish has been added");
+                InNameDishtxt.setText("");
+                InPriceDishtxt.setText("");
+            } else {
+                JOptionPane.showMessageDialog(null, "Error adding a dish");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Error connecting with the Data Base");
+        }
+        myCRUD.disconnect();
     }//GEN-LAST:event_bntAddDishConfirmActionPerformed
+
+    private void InPriceDishtxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_InPriceDishtxtKeyTyped
+        char c = evt.getKeyChar();
+        if (((c < '0') || (c > '9'))
+                && (c != '\b')
+                && (c != KeyEvent.VK_BACK_SPACE)
+                && (c != '.' || InPriceDishtxt.getText().contains("."))) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_InPriceDishtxtKeyTyped
 
     /**
      * @param args the command line arguments

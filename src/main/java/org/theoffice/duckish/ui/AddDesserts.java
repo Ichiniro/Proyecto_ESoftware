@@ -1,22 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.theoffice.duckish.ui;
 
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
 import org.theoffice.duckish.proc.CRUD;
 import org.theoffice.duckish.obj.Dish;
 
-/**
- *
- * @author al
- */
 public class AddDesserts extends javax.swing.JFrame {
 
     /**
      * Creates new form AddDesserts
      */
+    CRUD myCRUD = new CRUD("root", "902020");
+
     public AddDesserts() {
         initComponents();
         setLocationRelativeTo(null);
@@ -124,7 +119,7 @@ public class AddDesserts extends javax.swing.JFrame {
                 .addGroup(AddDessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(bntAddDessertConfirm)
                     .addComponent(btnBackAddDessert, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -151,12 +146,28 @@ public class AddDesserts extends javax.swing.JFrame {
     }//GEN-LAST:event_DessertPricetxtActionPerformed
 
     private void bntAddDessertConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntAddDessertConfirmActionPerformed
-        /*CRUD myCRUD = new CRUD("root", "902020");
         Dish myDish = new Dish();
-        myDish.setName(DessertNametxt.getText());
-        myDish.setPrice();
-        myCRUD.connect();
-        myCRUD.useDataBase();*/
+        if (DessertNametxt.getText().trim().equals("")
+                && (DessertPricetxt.getText().trim().equals(""))) {
+
+        }
+        if (myCRUD.connect()) {
+            myDish.setName(DessertNametxt.getText());
+            myDish.setPrice(Float.parseFloat(DessertPricetxt.getText()));
+            myDish.setDescription("Dessert");
+            myCRUD.connect();
+            myCRUD.useDataBase();
+            if (myCRUD.addDish(myDish)) {
+                JOptionPane.showMessageDialog(null, "The dish has been added");
+                DessertNametxt.setText("");
+                DessertPricetxt.setText("");
+            } else {
+                JOptionPane.showMessageDialog(null, "Error adding a dish");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Error connecting with the Data Base");
+        }
+        myCRUD.disconnect();
 
     }//GEN-LAST:event_bntAddDessertConfirmActionPerformed
 
@@ -169,7 +180,10 @@ public class AddDesserts extends javax.swing.JFrame {
 
     private void DessertPricetxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DessertPricetxtKeyTyped
         char c = evt.getKeyChar();
-        if (((c < '0') || (c > '9')) && (c != '\b')) {
+        if (((c < '0') || (c > '9'))
+                && (c != '\b')
+                && (c != KeyEvent.VK_BACK_SPACE)
+                && (c != '.' || DessertPricetxt.getText().contains("."))) {
             evt.consume();
         }
     }//GEN-LAST:event_DessertPricetxtKeyTyped
