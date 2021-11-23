@@ -1,7 +1,6 @@
 package org.theoffice.duckish.ui;
 
 import org.theoffice.duckish.obj.Employee;
-import org.theoffice.duckish.proc.SignUp;
 import org.theoffice.duckish.proc.CRUD;
 import org.theoffice.duckish.ui.SystemUI;
 

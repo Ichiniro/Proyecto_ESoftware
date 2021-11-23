@@ -4,12 +4,22 @@
  * and open the template in the editor.
  */
 package org.theoffice.duckish.ui;
+import org.theoffice.duckish.obj.Employee;
 
 /**
  *
  * @author al
  */
+
+
 public class SystemUI extends javax.swing.JFrame {
+    
+    private Employee userEmployee;
+
+    public void setUserEmployee(Employee userEmployee) {
+        this.userEmployee = userEmployee;
+    }
+    
 
     /**
      * Creates new form SystemUI

@@ -55,7 +55,8 @@ public class CRUD {
             statment = connection.createStatement();
             statment.executeQuery("use DUCKISH");
             return true;
-        } catch (SQLException e) {
+        }catch(SQLException e){
+            e.printStackTrace();
             return false;
         }
     }

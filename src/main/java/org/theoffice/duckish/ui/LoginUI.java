@@ -1,6 +1,5 @@
 package org.theoffice.duckish.ui;
 
-import org.theoffice.duckish.proc.Login;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -70,6 +69,7 @@ public class LoginUI extends JFrame {
             if (emp.getPassword().equals(hash)) {
                 SystemUI myS = new SystemUI();
                 myS.setVisible(true);
+                myS.setUserEmployee(emp);
                 this.dispose();
             } else {
                 JOptionPane.showMessageDialog(null,
