@@ -5,7 +5,8 @@
  */
 package org.theoffice.duckish.ui;
 
-
+import org.theoffice.duckish.proc.CRUD;
+import org.theoffice.duckish.obj.Dish;
 
 /**
  *
@@ -36,8 +37,8 @@ public class AddDesserts extends javax.swing.JFrame {
         PriceDessert = new javax.swing.JLabel();
         btnBackAddDessert = new javax.swing.JButton();
         bntAddDessertConfirm = new javax.swing.JButton();
-        InNameDesserttxt = new javax.swing.JTextField();
-        InPriceDesserttxt = new javax.swing.JTextField();
+        DessertNametxt = new javax.swing.JTextField();
+        DessertPricetxt = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(380, 400));
@@ -69,9 +70,14 @@ public class AddDesserts extends javax.swing.JFrame {
             }
         });
 
-        InPriceDesserttxt.addActionListener(new java.awt.event.ActionListener() {
+        DessertPricetxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InPriceDesserttxtActionPerformed(evt);
+                DessertPricetxtActionPerformed(evt);
+            }
+        });
+        DessertPricetxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                DessertPricetxtKeyTyped(evt);
             }
         });
 
@@ -94,11 +100,11 @@ public class AddDesserts extends javax.swing.JFrame {
                         .addGroup(AddDessertPanelLayout.createSequentialGroup()
                             .addComponent(NameDessert)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(InNameDesserttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(DessertNametxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(AddDessertPanelLayout.createSequentialGroup()
                             .addComponent(PriceDessert)
                             .addGap(18, 18, 18)
-                            .addComponent(InPriceDesserttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(DessertPricetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(66, Short.MAX_VALUE))
         );
         AddDessertPanelLayout.setVerticalGroup(
@@ -109,11 +115,11 @@ public class AddDesserts extends javax.swing.JFrame {
                 .addGap(50, 50, 50)
                 .addGroup(AddDessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NameDessert)
-                    .addComponent(InNameDesserttxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DessertNametxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(AddDessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PriceDessert)
-                    .addComponent(InPriceDesserttxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DessertPricetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(83, 83, 83)
                 .addGroup(AddDessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(bntAddDessertConfirm)
@@ -140,12 +146,18 @@ public class AddDesserts extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void InPriceDesserttxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InPriceDesserttxtActionPerformed
+    private void DessertPricetxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DessertPricetxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_InPriceDesserttxtActionPerformed
+    }//GEN-LAST:event_DessertPricetxtActionPerformed
 
     private void bntAddDessertConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntAddDessertConfirmActionPerformed
-        // TODO add your handling code here:
+        /*CRUD myCRUD = new CRUD("root", "902020");
+        Dish myDish = new Dish();
+        myDish.setName(DessertNametxt.getText());
+        myDish.setPrice();
+        myCRUD.connect();
+        myCRUD.useDataBase();*/
+
     }//GEN-LAST:event_bntAddDessertConfirmActionPerformed
 
     private void btnBackAddDessertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackAddDessertActionPerformed
@@ -154,6 +166,13 @@ public class AddDesserts extends javax.swing.JFrame {
         SystemUI bck = new SystemUI();
         bck.setVisible(true);
     }//GEN-LAST:event_btnBackAddDessertActionPerformed
+
+    private void DessertPricetxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DessertPricetxtKeyTyped
+        char c = evt.getKeyChar();
+        if (((c < '0') || (c > '9')) && (c != '\b')) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_DessertPricetxtKeyTyped
 
     /**
      * @param args the command line arguments
@@ -192,8 +211,8 @@ public class AddDesserts extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AddDessertPanel;
-    private javax.swing.JTextField InNameDesserttxt;
-    private javax.swing.JTextField InPriceDesserttxt;
+    private javax.swing.JTextField DessertNametxt;
+    private javax.swing.JTextField DessertPricetxt;
     private javax.swing.JLabel NameDessert;
     private javax.swing.JLabel PriceDessert;
     private javax.swing.JLabel TitleAddDessert;
