@@ -75,7 +75,7 @@ public class AddDrink extends javax.swing.JFrame {
         jPanelAddInfoDrinkLayout.setHorizontalGroup(
             jPanelAddInfoDrinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAddInfoDrinkLayout.createSequentialGroup()
-                .addContainerGap(123, Short.MAX_VALUE)
+                .addContainerGap(96, Short.MAX_VALUE)
                 .addComponent(TitleAddInfoDrink)
                 .addGap(69, 69, 69))
             .addGroup(jPanelAddInfoDrinkLayout.createSequentialGroup()
@@ -113,7 +113,7 @@ public class AddDrink extends javax.swing.JFrame {
                 .addGroup(jPanelAddInfoDrinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnBckAddDrink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAddDrinkConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -126,7 +126,7 @@ public class AddDrink extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanelAddInfoDrink, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanelAddInfoDrink, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -137,7 +137,7 @@ public class AddDrink extends javax.swing.JFrame {
     private void btnBckAddDrinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBckAddDrinkActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        SystemUI bck = new SystemUI();
+        AdminUI bck = new AdminUI();
         bck.setVisible(true);        
     }//GEN-LAST:event_btnBckAddDrinkActionPerformed
 
