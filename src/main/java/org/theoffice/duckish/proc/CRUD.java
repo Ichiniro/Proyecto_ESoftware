@@ -4,7 +4,6 @@ package org.theoffice.duckish.proc;
 import java.sql.*;
 import org.theoffice.duckish.obj.*;
 import java.util.ArrayList;
-import org.theoffice.duckish.proc.DButilities;
 
 public class CRUD {
 
@@ -26,7 +25,7 @@ public class CRUD {
     public boolean connect() {
         try {
             Class.forName("org.mariadb.jdbc.Driver");
-            connection = DriverManager.getConnection(url,user,password);
+            connection = DriverManager.getConnection(url, user, password);
             System.out.println("Connection Successful");
             return connection != null;
         } catch (Exception e) {
@@ -50,7 +49,8 @@ public class CRUD {
             return false;
         }
     }
-    public boolean useDataBase(){
+
+    public boolean useDataBase() {
         try {
             statment = connection.createStatement();
             statment.executeQuery("use DUCKISH");
@@ -61,7 +61,7 @@ public class CRUD {
         }
     }
 
-    public boolean creatTables(){
+    public boolean creatTables() {
         try {
             statment = connection.createStatement();
             statment.executeUpdate("create table if not exists EMPLOYEES("
@@ -73,7 +73,7 @@ public class CRUD {
                     + "PASSWORD_USER varchar(65) not null ,"
                     + "primary key (EMPLOYEE_ID)"
                     + ")");
-            
+
             statment.executeUpdate("CREATE TABLE IF NOT EXISTS DISHES("
                     + "DISH_ID INT auto_increment,"
                     + "DISH_NAME VARCHAR(75) NOT NULL,"
@@ -98,6 +98,11 @@ public class CRUD {
                     + "primary key (COMMAND_DETAILS_ID),"
                     + "foreign key (DISH_ID) references DISHES(DISH_ID),"
                     + "foreign key (EMPLOYEE_ID) references EMPLOYEES(EMPLOYEE_ID)"
+                    + "foreign key (TABLE_NUM) references RESTAURANT_TABLE(TABLE_NUM)"
+                    + ");");
+            statment.executeUpdate("CREATE TABLE IF NOT EXISTS RESTAURANT_TABLE("
+                    + "TABLE_NUM INT,"
+                    + "primary key (TABLE_NUM),"
                     + ");");
             return true;
         } catch (SQLException e) {
@@ -158,6 +163,21 @@ public class CRUD {
         } catch (SQLException e) {
             return false;
         }
+    }
+
+    public boolean addRestaurantTable(RestaurantTable myTable) {
+        try {
+            statment = connection.createStatement();
+            statment.executeUpdate("INSERT INTO TABLE(TABLE_NUM)("
+                    + myTable.getRestauran_table()
+                    + ")");
+
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+
     }
 
     public ArrayList getEmployees() {
@@ -237,8 +257,24 @@ public class CRUD {
         return CommandsDetails;
     }
 
+    public ArrayList getRestaurantTable() {
+        ArrayList RestaurantTable = new ArrayList();
+        try {
+            statment = connection.createStatement();
+            result = statment.executeQuery("SELECT * FROM RESTAURANT_TABLE");
+            while (result.next()) {
+                RestaurantTable myTable = new RestaurantTable();
+                myTable.setTableNum(result.getString("TABLE_NUM"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return RestaurantTable;
+    }
+
     public Employee searchEmployee(String search) {
-        
+
         Employee myEmployee = new Employee();
         try {
             statment = connection.createStatement();
@@ -250,14 +286,14 @@ public class CRUD {
                     + "'%" + search + "%' " + " or PASSWORD_USER LIKE "
                     + "'%" + search + "%' ");
             while (result.next()) {
-                
+
                 myEmployee.setEmployeeID(result.getInt("EMPLOYEE_ID"));
                 myEmployee.setFirstName(result.getString("FIRST_NAME"));
                 myEmployee.setLastName(result.getString("LAST_NAME"));
                 myEmployee.setUsername(result.getString("USER_NAME"));
                 myEmployee.setJobTitle(result.getString("JOB_TITLE"));
                 myEmployee.setPassword(result.getString("PASSWORD_USER"));//could be this is a problem
-                
+
             }
 
         } catch (SQLException e) {
@@ -345,6 +381,24 @@ public class CRUD {
         return CommandsDetails;
     }
 
+    public ArrayList searchRestaurantTable(String search) {
+        ArrayList RestaurantTable = new ArrayList();
+        try {
+            statment = connection.createStatement();
+            result = statment.executeQuery("SELECT * FROM RESTAURANT_TABLE WHERE TABLE_NUM LIKE "
+                    + "'%" + search + "%' or TABLE_NUM "
+            );
+            while (result.next()) {
+                RestaurantTable myTable = new RestaurantTable();
+                myTable.setTableNum(result.getString("TABLE_NUM"));
+
+            }
+        } catch (SQLException e) {
+            return null;
+        }
+        return RestaurantTable;
+    }
+
     public void deleteEmployee(int id) {
         try {
             statment = connection.createStatement();
@@ -377,6 +431,15 @@ public class CRUD {
         }
     }
 
+    public void deleteRestaurantTable(int id) {
+        try {
+            statment = connection.createStatement();
+            statment.executeUpdate("DELETE FROM RESTAURANT_TABLE WHERE TABLE_NUM = " + id);
+        } catch (SQLException e) {
+
+        }
+    }
+
     public boolean updateEmployee(Employee myEmployee) {
         try {
             statment = connection.createStatement();
@@ -391,44 +454,59 @@ public class CRUD {
             return false;
         }
     }
-    
+
     public boolean updateDishes(Dish myDish) {
         try {
             statment = connection.createStatement();
-            statment.executeUpdate("UPDATE DISH SET DISH_NAME = '" + myDish.getName()+ "',"
+            statment.executeUpdate("UPDATE DISH SET DISH_NAME = '" + myDish.getName() + "',"
                     + "PRICE = '" + myDish.getPrice() + "'"
-                    + "DESCRIPTION = '" +myDish.getDescription() + "'"
+                    + "DESCRIPTION = '" + myDish.getDescription() + "'"
                     + "WHERE DISH_ID = " + myDish.getDishID());
             return true;
         } catch (SQLException e) {
             return false;
         }
     }
-    
+
     public boolean updateCommand(Command myCommand) {
         try {
             statment = connection.createStatement();
-            statment.executeUpdate("UPDATE EMPLOYEE SET DATE_COMMAND = '" + myCommand.getDateCommand()+ "',"
-                    + "TOTAL = '" + myCommand.getTotal()+ "'"
+            statment.executeUpdate("UPDATE EMPLOYEE SET DATE_COMMAND = '" + myCommand.getDateCommand() + "',"
+                    + "TOTAL = '" + myCommand.getTotal() + "'"
                     + "WHERE COMMAND_ID = " + myCommand.getOrderID());
             return true;
         } catch (SQLException e) {
             return false;
         }
     }
-    
+
     public boolean updateCommandDetails(CommandDetails myCommandDetails) {
         try {
             statment = connection.createStatement();
-            statment.executeUpdate("UPDATE COMMAND_DETAILS SET COMMAND_ID = '" + myCommandDetails.getCommandID()+ "',"
-                    + "QUANTITY = '" + myCommandDetails.getQuantity()+ "',"
-                    + "DISH_ID = '" + myCommandDetails.getDishID()+ "',"
-                    + "TABLE_NUM = '" + myCommandDetails.getTableNum()+ "',"
-                    + "EMPLOYEE_ID = '" + myCommandDetails.getEmployeeID()+ "'"
+            statment.executeUpdate("UPDATE COMMAND_DETAILS SET COMMAND_ID = '" + myCommandDetails.getCommandID() + "',"
+                    + "QUANTITY = '" + myCommandDetails.getQuantity() + "',"
+                    + "DISH_ID = '" + myCommandDetails.getDishID() + "',"
+                    + "TABLE_NUM = '" + myCommandDetails.getTableNum() + "',"
+                    + "EMPLOYEE_ID = '" + myCommandDetails.getEmployeeID() + "'"
                     + "WHERE COMMAND_DETAILS_ID = " + myCommandDetails.getCommandDetailsID());
             return true;
         } catch (SQLException e) {
             return false;
         }
     }
+
+    public boolean updateRestaurantTable(RestaurantTable myTable) {
+        try {
+            statment = connection.createStatement();
+            statment.executeUpdate("UPDATE RESTAURANT_TABLE SET TABLE_NUM = '"
+                    + myTable.getTableNum() + "',"
+                    + "TABLE_NUM = = '" + myTable.getTableNum() + "',"
+            );
+            return true;
+        } catch (SQLException e) {
+            return false;
+        }
+
+    }
+
 }
