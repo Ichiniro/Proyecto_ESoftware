@@ -56,6 +56,7 @@ public class CRUD {
             statment.executeQuery("use DUCKISH");
             return true;
         }catch(SQLException e){
+            e.printStackTrace();
             return false;
         }
     }
