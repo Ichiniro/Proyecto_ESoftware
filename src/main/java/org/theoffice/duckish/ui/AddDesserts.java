@@ -86,7 +86,7 @@ public class AddDesserts extends javax.swing.JFrame {
         AddDessertPanelLayout.setHorizontalGroup(
             AddDessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddDessertPanelLayout.createSequentialGroup()
-                .addGap(49, 103, Short.MAX_VALUE)
+                .addGap(49, 71, Short.MAX_VALUE)
                 .addComponent(TitleAddDessert)
                 .addGap(66, 66, 66))
             .addGroup(AddDessertPanelLayout.createSequentialGroup()
@@ -124,7 +124,7 @@ public class AddDesserts extends javax.swing.JFrame {
                 .addGroup(AddDessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(bntAddDessertConfirm)
                     .addComponent(btnBackAddDessert, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -163,7 +163,7 @@ public class AddDesserts extends javax.swing.JFrame {
     private void btnBackAddDessertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackAddDessertActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        SystemUI bck = new SystemUI();
+        AdminUI bck = new AdminUI();
         bck.setVisible(true);
     }//GEN-LAST:event_btnBackAddDessertActionPerformed
 

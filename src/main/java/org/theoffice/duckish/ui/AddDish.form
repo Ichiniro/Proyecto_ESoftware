@@ -57,24 +57,24 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="PiceDish" min="-2" max="-2" attributes="0"/>
-                      <Component id="NameDish" min="-2" max="-2" attributes="0"/>
-                      <Component id="TypeDish" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="ClaveDish" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="QuantityDish" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnBackAddDish" alignment="1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="InNameDishtxt" max="32767" attributes="0"/>
-                          <Component id="InPriceDishtxt" max="32767" attributes="0"/>
-                          <Component id="InTypeDishtxt" alignment="0" max="32767" attributes="0"/>
-                          <Component id="InClaveDishtxt" alignment="0" max="32767" attributes="0"/>
-                          <Component id="InQuantityDishtxt" alignment="0" pref="220" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="PiceDish" min="-2" max="-2" attributes="0"/>
+                              <Component id="NameDish" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="InNameDishtxt" pref="220" max="32767" attributes="0"/>
+                              <Component id="InPriceDishtxt" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
-                      <Component id="bntAddDishConfirm" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="btnBackAddDish" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="158" max="32767" attributes="0"/>
+                          <Component id="bntAddDishConfirm" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -100,27 +100,12 @@
                       <Component id="PiceDish" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="InPriceDishtxt" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="InTypeDishtxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="TypeDish" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="InClaveDishtxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ClaveDish" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="InQuantityDishtxt" min="-2" max="-2" attributes="0"/>
-                      <Component id="QuantityDish" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="118" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="btnBackAddDish" min="-2" max="-2" attributes="0"/>
                       <Component id="bntAddDishConfirm" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+                  <EmptySpace pref="95" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -153,30 +138,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="InPriceDishtxtActionPerformed"/>
           </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="TypeDish">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Type: "/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="ClaveDish">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Clave: "/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="QuantityDish">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Quantity: "/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="InTypeDishtxt">
-        </Component>
-        <Component class="javax.swing.JTextField" name="InClaveDishtxt">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="InClaveDishtxtActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="InQuantityDishtxt">
         </Component>
         <Component class="javax.swing.JButton" name="btnBackAddDish">
           <Properties>

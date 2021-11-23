@@ -34,12 +34,6 @@ public class AddDish extends javax.swing.JFrame {
         InNameDishtxt = new javax.swing.JTextField();
         PiceDish = new javax.swing.JLabel();
         InPriceDishtxt = new javax.swing.JTextField();
-        TypeDish = new javax.swing.JLabel();
-        ClaveDish = new javax.swing.JLabel();
-        QuantityDish = new javax.swing.JLabel();
-        InTypeDishtxt = new javax.swing.JTextField();
-        InClaveDishtxt = new javax.swing.JTextField();
-        InQuantityDishtxt = new javax.swing.JTextField();
         btnBackAddDish = new javax.swing.JButton();
         bntAddDishConfirm = new javax.swing.JButton();
 
@@ -70,18 +64,6 @@ public class AddDish extends javax.swing.JFrame {
             }
         });
 
-        TypeDish.setText("Type: ");
-
-        ClaveDish.setText("Clave: ");
-
-        QuantityDish.setText("Quantity: ");
-
-        InClaveDishtxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InClaveDishtxtActionPerformed(evt);
-            }
-        });
-
         btnBackAddDish.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back_2.png"))); // NOI18N
         btnBackAddDish.setMinimumSize(new java.awt.Dimension(30, 30));
         btnBackAddDish.setPreferredSize(new java.awt.Dimension(50, 45));
@@ -104,22 +86,20 @@ public class AddDish extends javax.swing.JFrame {
             jPanelAddInfoDishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelAddInfoDishLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(jPanelAddInfoDishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(PiceDish)
-                    .addComponent(NameDish)
-                    .addComponent(TypeDish)
-                    .addComponent(ClaveDish)
-                    .addComponent(QuantityDish)
-                    .addComponent(btnBackAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelAddInfoDishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanelAddInfoDishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(InNameDishtxt)
-                        .addComponent(InPriceDishtxt)
-                        .addComponent(InTypeDishtxt)
-                        .addComponent(InClaveDishtxt)
-                        .addComponent(InQuantityDishtxt, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE))
-                    .addComponent(bntAddDishConfirm))
+                .addGroup(jPanelAddInfoDishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanelAddInfoDishLayout.createSequentialGroup()
+                        .addGroup(jPanelAddInfoDishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(PiceDish)
+                            .addComponent(NameDish))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelAddInfoDishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(InNameDishtxt, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                            .addComponent(InPriceDishtxt)))
+                    .addGroup(jPanelAddInfoDishLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(btnBackAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
+                        .addComponent(bntAddDishConfirm)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAddInfoDishLayout.createSequentialGroup()
                 .addContainerGap(105, Short.MAX_VALUE)
@@ -139,23 +119,11 @@ public class AddDish extends javax.swing.JFrame {
                 .addGroup(jPanelAddInfoDishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PiceDish)
                     .addComponent(InPriceDishtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(jPanelAddInfoDishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(InTypeDishtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TypeDish))
-                .addGap(25, 25, 25)
-                .addGroup(jPanelAddInfoDishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(InClaveDishtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ClaveDish))
-                .addGap(25, 25, 25)
-                .addGroup(jPanelAddInfoDishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(InQuantityDishtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(QuantityDish))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
+                .addGap(55, 55, 55)
                 .addGroup(jPanelAddInfoDishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnBackAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bntAddDishConfirm))
-                .addGap(88, 88, 88))
+                .addContainerGap(95, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -184,15 +152,11 @@ public class AddDish extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_InPriceDishtxtActionPerformed
 
-    private void InClaveDishtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InClaveDishtxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_InClaveDishtxtActionPerformed
-
     private void btnBackAddDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackAddDishActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        SystemUI bck = new SystemUI();
-        bck.setVisible(true);
+        AdminUI bkc = new AdminUI();
+        bkc.setVisible(true);
     }//GEN-LAST:event_btnBackAddDishActionPerformed
 
     private void bntAddDishConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntAddDishConfirmActionPerformed
@@ -235,17 +199,11 @@ public class AddDish extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ClaveDish;
-    private javax.swing.JTextField InClaveDishtxt;
     private javax.swing.JTextField InNameDishtxt;
     private javax.swing.JTextField InPriceDishtxt;
-    private javax.swing.JTextField InQuantityDishtxt;
-    private javax.swing.JTextField InTypeDishtxt;
     private javax.swing.JLabel NameDish;
     private javax.swing.JLabel PiceDish;
-    private javax.swing.JLabel QuantityDish;
     private javax.swing.JLabel TitleAddInfoDish;
-    private javax.swing.JLabel TypeDish;
     private javax.swing.JButton bntAddDishConfirm;
     private javax.swing.JButton btnBackAddDish;
     private javax.swing.JPanel jPanelAddInfoDish;

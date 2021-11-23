@@ -16,6 +16,7 @@ public class DeleteEmployeeUI extends javax.swing.JFrame {
      */
     public DeleteEmployeeUI() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -184,7 +185,7 @@ public class DeleteEmployeeUI extends javax.swing.JFrame {
     private void bckDeleteEmployeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bckDeleteEmployeActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        SystemUI bcSys = new SystemUI();
+        AdminUI bcSys = new AdminUI();
         bcSys.setVisible(true);
     }//GEN-LAST:event_bckDeleteEmployeActionPerformed
 
