@@ -343,7 +343,7 @@
                           <Component id="btnAddCommand" min="-2" max="-2" attributes="0"/>
                           <Component id="btnDeleteCommand" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="30" max="32767" attributes="0"/>
+                      <EmptySpace pref="27" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -465,9 +465,7 @@
                           <Component id="btnAddDish" min="-2" max="-2" attributes="0"/>
                           <Component id="btnDeleteDish" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-
                       <EmptySpace pref="30" max="32767" attributes="0"/>
-
                   </Group>
               </Group>
             </DimensionLayout>
@@ -597,9 +595,7 @@
                           <Component id="btnAddDrink" min="-2" max="-2" attributes="0"/>
                           <Component id="btnDeleteDrink" min="-2" max="-2" attributes="0"/>
                       </Group>
-
                       <EmptySpace pref="30" max="32767" attributes="0"/>
-
                   </Group>
               </Group>
             </DimensionLayout>

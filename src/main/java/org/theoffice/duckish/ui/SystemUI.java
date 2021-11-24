@@ -363,7 +363,7 @@ public class SystemUI extends javax.swing.JFrame {
                 .addGroup(jPannelTablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAddCommand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnDeleteCommand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         PrincipalTabbed.addTab("Tables", jPannelTables);
@@ -418,18 +418,15 @@ public class SystemUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelDishesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-
                     .addComponent(btnDeleteDish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(30, Short.MAX_VALUE))
-
         );
 
         PrincipalTabbed.addTab("Dishes", jPanelDishes);
 
         jPanelDrinks.setBackground(new java.awt.Color(22, 117, 145));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-
+        tableDrinksList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -469,7 +466,6 @@ public class SystemUI extends javax.swing.JFrame {
                 .addGroup(jPanelDrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAddDrink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnDeleteDrink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                      
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -477,7 +473,7 @@ public class SystemUI extends javax.swing.JFrame {
 
         jPanelDesserts.setBackground(new java.awt.Color(22, 117, 145));
 
-        jTableDessertsList.setModel(new javax.swing.table.DefaultTableModel(
+        tableDessertsList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -485,10 +481,9 @@ public class SystemUI extends javax.swing.JFrame {
                 "NAME", "Price", "Details"
             }
         ));
-        jTableDessertsList.setMaximumSize(new java.awt.Dimension(515, 64));
-        jTableDessertsList.setPreferredSize(new java.awt.Dimension(500, 800));
-        jScrollPane4.setViewportView(jTableDessertsList);
-
+        tableDessertsList.setMaximumSize(new java.awt.Dimension(515, 64));
+        tableDessertsList.setPreferredSize(new java.awt.Dimension(500, 800));
+        jScrollPane4.setViewportView(tableDessertsList);
 
         btnAddDessert.setBackground(new java.awt.Color(22, 117, 145));
         btnAddDessert.setForeground(new java.awt.Color(22, 117, 145));
@@ -718,12 +713,11 @@ public class SystemUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTableDessertsList;
-    private javax.swing.JTable jTableDishesList;
     private javax.swing.JTable jTableTicket;
     private javax.swing.JTable jTablesList;
-
+    private javax.swing.JTable tableDessertsList;
+    private javax.swing.JTable tableDishesList;
+    private javax.swing.JTable tableDrinksList;
     private javax.swing.JPanel tablePanel;
     private javax.swing.JPanel titlePanel;
     // End of variables declaration//GEN-END:variables
