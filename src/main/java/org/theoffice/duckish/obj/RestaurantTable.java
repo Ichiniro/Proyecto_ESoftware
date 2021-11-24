@@ -12,20 +12,20 @@ package org.theoffice.duckish.obj;
 
 public class RestaurantTable {
    
-    private String TableNum;
+
     private int restauran_table ;
 
     public int getRestauran_table() {
         return restauran_table;
     }
 
-    public void setRestauran_table(int restauran_table) {
-        this.restauran_table = restauran_table;
+    public void setRestauran_table_add(int restauran_table) {
+        this.restauran_table = restauran_table+1;
     }
-    public String getTableNum() {
-    return null;
+    
+    public void setRestauran_table(int restaurant_table) {
+        this.restauran_table = restaurant_table;
     }
-    public void setTableNum(String TableNum){
-        this.TableNum = TableNum;
+    
 }
-}
+
