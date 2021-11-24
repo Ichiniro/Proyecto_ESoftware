@@ -1,6 +1,8 @@
 package org.theoffice.duckish.ui;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import org.theoffice.duckish.obj.*;
 import org.theoffice.duckish.proc.CRUD;
@@ -9,7 +11,9 @@ public class SystemUI extends javax.swing.JFrame {
 
     private Employee userEmployee;
     CRUD myCRUD = new CRUD("root", "902020");
-    DefaultTableModel tableModel;
+    DefaultTableModel tableModelDishes = new DefaultTableModel();
+    DefaultTableModel tableModelDrinks = new DefaultTableModel();
+    DefaultTableModel tableModelDesserts = new DefaultTableModel();
 
     public void setUserEmployee(Employee userEmployee) {
         this.userEmployee = userEmployee;
@@ -26,16 +30,46 @@ public class SystemUI extends javax.swing.JFrame {
         } else {
             btnSettings.setEnabled(false);
         }
-
+        
+        putDishesTable();
+        putDrinksTable();
+        putDessertsTable();
     }
 
     public SystemUI() {
         initComponents();
         setLocationRelativeTo(null);
+        putDishesTable();
+        putDrinksTable();
+        putDessertsTable();
+        
+    }
+    private void cleanTableDish(){
+        for (int i = 0; i < tableDishesList.getRowCount(); i++) {
+            tableModelDishes.removeRow(i);
+            //This smell bad
+            i-=1;
+        }
+    }
+    private void cleanTableDrink(){
+        for (int i = 0; i < tableDrinksList.getRowCount(); i++) {
+            tableModelDrinks.removeRow(i);
+            //This smell bad
+            i-=1;
+        }
+    }
+    private void cleanTableDessert(){
+        for (int i = 0; i < tableDessertsList.getRowCount(); i++) {
+            tableModelDesserts.removeRow(i);
+            //This smell bad
+            i-=1;
+        }
     }
     
-    
     private void putDishesTable(){
+        cleanTableDish();
+        tableModelDishes.addColumn("Name");
+        tableModelDishes.addColumn("Price");
         ArrayList Products;
         Dish myDish;
         if(myCRUD.connect()){
@@ -47,10 +81,66 @@ public class SystemUI extends javax.swing.JFrame {
                 myDish = (Dish) Products.get(i);
                 Data[0] = myDish.getName();
                 Data[1] = String.valueOf(myDish.getPrice());
+                tableModelDishes.addRow(Data);
                 }
-                
+                this.tableDishesList.setModel(tableModelDishes);
+                this.tableDishesList.getColumnModel().getColumn(0).setPreferredWidth(100);
+                this.tableDishesList.getColumnModel().getColumn(1).setPreferredWidth(100);
             }
         }else{
+            JOptionPane.showMessageDialog(null, "Error to get data");
+        }        
+    }
+    
+    private void putDrinksTable(){
+        cleanTableDrink();
+        tableModelDrinks.addColumn("Name");
+        tableModelDrinks.addColumn("Price");
+        ArrayList Products;
+        Dish myDish;
+        if(myCRUD.connect()){
+            myCRUD.useDataBase();
+            String[] Data = new String [3];
+            Products = myCRUD.getDishesDrink();
+            if (Products != null) {
+                for(int i = 0; i<Products.size();i++){
+                myDish = (Dish) Products.get(i);
+                Data[0] = myDish.getName();
+                Data[1] = String.valueOf(myDish.getPrice());
+                tableModelDrinks.addRow(Data);
+                }
+                this.tableDrinksList.setModel(tableModelDrinks);
+                this.tableDrinksList.getColumnModel().getColumn(0).setPreferredWidth(100);
+                this.tableDrinksList.getColumnModel().getColumn(1).setPreferredWidth(100);
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Error to get data");
+        }        
+    }
+    
+    private void putDessertsTable(){
+        cleanTableDessert();
+        tableModelDesserts.addColumn("Name");
+        tableModelDesserts.addColumn("Price");
+        ArrayList Products;
+        Dish myDish;
+        if(myCRUD.connect()){
+            myCRUD.useDataBase();
+            String[] Data = new String [3];
+            Products = myCRUD.getDishesDesserts();
+            if (Products != null) {
+                for(int i = 0; i<Products.size();i++){
+                myDish = (Dish) Products.get(i);
+                Data[0] = myDish.getName();
+                Data[1] = String.valueOf(myDish.getPrice());
+                tableModelDesserts.addRow(Data);
+                }
+                this.tableDessertsList.setModel(tableModelDesserts);
+                this.tableDessertsList.getColumnModel().getColumn(0).setPreferredWidth(100);
+                this.tableDessertsList.getColumnModel().getColumn(1).setPreferredWidth(100);
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Error to get data");
         }        
     }
 

@@ -215,6 +215,7 @@ public class CRUD {
                 Dishes.add(myDish);
             }
         } catch (SQLException e) {
+            e.printStackTrace();
             return null;
         }
         return Dishes;
