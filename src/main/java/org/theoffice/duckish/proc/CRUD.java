@@ -101,7 +101,7 @@ public class CRUD {
                     + "foreign key (TABLE_NUM) references RESTAURANT_TABLE(TABLE_NUM)"
                     + ");");
             statment.executeUpdate("CREATE TABLE IF NOT EXISTS RESTAURANT_TABLE("
-                    + "TABLE_NUM INT,"
+                    + "TABLE_NUM INT auto_increment,"
                     + "primary key (TABLE_NUM),"
                     + ");");
             return true;
@@ -169,10 +169,13 @@ public class CRUD {
     public boolean addRestaurantTable(RestaurantTable myTable) {
         try {
             statment = connection.createStatement();
-            statment.executeUpdate("INSERT INTO TABLE(TABLE_NUM)("
+            result = statment.executeQuery("select count(TABLE_NUM) AS total from RESTAURANT_TABLE");
+            if(result.next()){
+            myTable.setRestauran_table_add(result.getInt("total"));
+            statment.executeUpdate("INSERT INTO RESTAURANT_TABLE SET TABLE_NUM = '"
                     + myTable.getRestauran_table()
-                    + ")");
-
+                    + "'");
+            }
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -290,6 +293,7 @@ public class CRUD {
                 myCommandDetails.setDishID(result.getInt("DISH_ID"));
                 myCommandDetails.setTableNum(result.getInt("TABLE_NUM"));
                 myCommandDetails.setEmployeeID(result.getInt("EMPLOYEE_ID"));
+                CommandsDetails.add(myCommandDetails);
             }
         } catch (SQLException e) {
             return null;
@@ -298,19 +302,20 @@ public class CRUD {
     }
 
     public ArrayList getRestaurantTable() {
-        ArrayList RestaurantTable = new ArrayList();
+        ArrayList RestaurantTables = new ArrayList();
         try {
             statment = connection.createStatement();
             result = statment.executeQuery("SELECT * FROM RESTAURANT_TABLE");
             while (result.next()) {
                 RestaurantTable myTable = new RestaurantTable();
-                myTable.setTableNum(result.getString("TABLE_NUM"));
+                myTable.setRestauran_table(result.getInt("TABLE_NUM"));
+                RestaurantTables.add(myTable);
             }
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
         }
-        return RestaurantTable;
+        return RestaurantTables;
     }
 
     public Employee searchEmployee(String search) {
@@ -430,7 +435,7 @@ public class CRUD {
             );
             while (result.next()) {
                 RestaurantTable myTable = new RestaurantTable();
-                myTable.setTableNum(result.getString("TABLE_NUM"));
+                myTable.setRestauran_table(result.getInt("TABLE_NUM"));
 
             }
         } catch (SQLException e) {
@@ -539,8 +544,8 @@ public class CRUD {
         try {
             statment = connection.createStatement();
             statment.executeUpdate("UPDATE RESTAURANT_TABLE SET TABLE_NUM = '"
-                    + myTable.getTableNum() + "',"
-                    + "TABLE_NUM = = '" + myTable.getTableNum() + "',"
+                    + myTable.getRestauran_table()+ "',"
+                    + "TABLE_NUM = = '" + myTable.getRestauran_table()+ "',"
             );
             return true;
         } catch (SQLException e) {

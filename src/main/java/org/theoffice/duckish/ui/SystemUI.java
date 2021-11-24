@@ -11,9 +11,12 @@ public class SystemUI extends javax.swing.JFrame {
 
     private Employee userEmployee;
     CRUD myCRUD = new CRUD("root", "902020");
+
     DefaultTableModel tableModelDishes = new DefaultTableModel();
     DefaultTableModel tableModelDrinks = new DefaultTableModel();
     DefaultTableModel tableModelDesserts = new DefaultTableModel();
+    DefaultTableModel tableModelTables = new DefaultTableModel();
+    DefaultTableModel tableModelCommands = new DefaultTableModel();
 
     public void setUserEmployee(Employee userEmployee) {
         this.userEmployee = userEmployee;
@@ -29,119 +32,166 @@ public class SystemUI extends javax.swing.JFrame {
             btnSettings.setEnabled(true);
         } else {
             btnSettings.setEnabled(false);
+            btnAddTableList.setEnabled(false);
         }
-        
+
+        tableModelDishes.addColumn("Name");
+        tableModelDishes.addColumn("Price");
+        tableModelDrinks.addColumn("Name");
+        tableModelDrinks.addColumn("Price");
+        tableModelDesserts.addColumn("Name");
+        tableModelDesserts.addColumn("Price");
+        tableModelTables.addColumn("Table Number");
         putDishesTable();
         putDrinksTable();
         putDessertsTable();
+        putTableTable();
     }
 
     public SystemUI() {
         initComponents();
         setLocationRelativeTo(null);
+        tableModelDishes.addColumn("Name");
+        tableModelDishes.addColumn("Price");
+        tableModelDrinks.addColumn("Name");
+        tableModelDrinks.addColumn("Price");
+        tableModelDesserts.addColumn("Name");
+        tableModelDesserts.addColumn("Price");
+        tableModelTables.addColumn("Table Number");
+        tableModelCommands.addColumn("Dish");
+        tableModelCommands.addColumn("Prices");
         putDishesTable();
         putDrinksTable();
         putDessertsTable();
-        
+        putTableTable();
     }
-    private void cleanTableDish(){
+
+    private void cleanTableDish() {
         for (int i = 0; i < tableDishesList.getRowCount(); i++) {
             tableModelDishes.removeRow(i);
             //This smell bad
-            i-=1;
+            i -= 1;
         }
     }
-    private void cleanTableDrink(){
+
+    private void cleanTableDrink() {
         for (int i = 0; i < tableDrinksList.getRowCount(); i++) {
             tableModelDrinks.removeRow(i);
             //This smell bad
-            i-=1;
+            i -= 1;
         }
     }
-    private void cleanTableDessert(){
+
+    private void cleanTableDessert() {
         for (int i = 0; i < tableDessertsList.getRowCount(); i++) {
             tableModelDesserts.removeRow(i);
             //This smell bad
-            i-=1;
+            i -= 1;
         }
     }
-    
-    private void putDishesTable(){
+
+    private void cleanTableTable() {
+        for (int i = 0; i < jTablesList.getRowCount(); i++) {
+            tableModelTables.removeRow(i);
+            //This smell bad
+            i -= 1;
+        }
+    }
+
+    private void putDishesTable() {
         cleanTableDish();
-        tableModelDishes.addColumn("Name");
-        tableModelDishes.addColumn("Price");
         ArrayList Products;
         Dish myDish;
-        if(myCRUD.connect()){
+        if (myCRUD.connect()) {
             myCRUD.useDataBase();
-            String[] Data = new String [3];
+            String[] Data = new String[3];
             Products = myCRUD.getDishesDish();
             if (Products != null) {
-                for(int i = 0; i<Products.size();i++){
-                myDish = (Dish) Products.get(i);
-                Data[0] = myDish.getName();
-                Data[1] = String.valueOf(myDish.getPrice());
-                tableModelDishes.addRow(Data);
+                for (int i = 0; i < Products.size(); i++) {
+                    myDish = (Dish) Products.get(i);
+                    Data[0] = myDish.getName();
+                    Data[1] = String.valueOf(myDish.getPrice());
+                    tableModelDishes.addRow(Data);
                 }
                 this.tableDishesList.setModel(tableModelDishes);
                 this.tableDishesList.getColumnModel().getColumn(0).setPreferredWidth(100);
                 this.tableDishesList.getColumnModel().getColumn(1).setPreferredWidth(100);
+                myCRUD.disconnect();
             }
-        }else{
-            JOptionPane.showMessageDialog(null, "Error to get data");
-        }        
+        } else {
+            JOptionPane.showMessageDialog(null, "Empty rows in the database");
+        }
     }
-    
-    private void putDrinksTable(){
+
+    private void putDrinksTable() {
         cleanTableDrink();
-        tableModelDrinks.addColumn("Name");
-        tableModelDrinks.addColumn("Price");
         ArrayList Products;
         Dish myDish;
-        if(myCRUD.connect()){
+        if (myCRUD.connect()) {
             myCRUD.useDataBase();
-            String[] Data = new String [3];
+            String[] Data = new String[3];
             Products = myCRUD.getDishesDrink();
             if (Products != null) {
-                for(int i = 0; i<Products.size();i++){
-                myDish = (Dish) Products.get(i);
-                Data[0] = myDish.getName();
-                Data[1] = String.valueOf(myDish.getPrice());
-                tableModelDrinks.addRow(Data);
+                for (int i = 0; i < Products.size(); i++) {
+                    myDish = (Dish) Products.get(i);
+                    Data[0] = myDish.getName();
+                    Data[1] = String.valueOf(myDish.getPrice());
+                    tableModelDrinks.addRow(Data);
                 }
                 this.tableDrinksList.setModel(tableModelDrinks);
                 this.tableDrinksList.getColumnModel().getColumn(0).setPreferredWidth(100);
                 this.tableDrinksList.getColumnModel().getColumn(1).setPreferredWidth(100);
+                myCRUD.disconnect();
             }
-        }else{
-            JOptionPane.showMessageDialog(null, "Error to get data");
-        }        
+        } else {
+            JOptionPane.showMessageDialog(null, "Empty rows in the database\nPlease add dishes to the menu");
+        }
     }
-    
-    private void putDessertsTable(){
+
+    private void putDessertsTable() {
         cleanTableDessert();
-        tableModelDesserts.addColumn("Name");
-        tableModelDesserts.addColumn("Price");
         ArrayList Products;
         Dish myDish;
-        if(myCRUD.connect()){
+        if (myCRUD.connect()) {
             myCRUD.useDataBase();
-            String[] Data = new String [3];
+            String[] Data = new String[3];
             Products = myCRUD.getDishesDesserts();
             if (Products != null) {
-                for(int i = 0; i<Products.size();i++){
-                myDish = (Dish) Products.get(i);
-                Data[0] = myDish.getName();
-                Data[1] = String.valueOf(myDish.getPrice());
-                tableModelDesserts.addRow(Data);
+                for (int i = 0; i < Products.size(); i++) {
+                    myDish = (Dish) Products.get(i);
+                    Data[0] = myDish.getName();
+                    Data[1] = String.valueOf(myDish.getPrice());
+                    tableModelDesserts.addRow(Data);
                 }
                 this.tableDessertsList.setModel(tableModelDesserts);
                 this.tableDessertsList.getColumnModel().getColumn(0).setPreferredWidth(100);
                 this.tableDessertsList.getColumnModel().getColumn(1).setPreferredWidth(100);
+                myCRUD.disconnect();
             }
-        }else{
-            JOptionPane.showMessageDialog(null, "Error to get data");
-        }        
+        } else {
+            JOptionPane.showMessageDialog(null, "Empty rows in the database\nPlease add dishes to the menu");
+        }
+    }
+
+    private void putTableTable() {
+        cleanTableTable();
+        ArrayList Products;
+        RestaurantTable myRestaurantTable;
+        if (myCRUD.connect()) {
+            myCRUD.useDataBase();
+            String[] Data = new String[1];
+            Products = myCRUD.getRestaurantTable();
+            if (Products != null) {
+                for (int i = 0; i < Products.size(); i++) {
+                    myRestaurantTable = (RestaurantTable) Products.get(i);
+                    Data[0] = String.valueOf(myRestaurantTable.getRestauran_table());
+                    tableModelTables.addRow(Data);
+                }
+                this.jTablesList.setModel(tableModelTables);
+                this.jTablesList.getColumnModel().getColumn(0).setPreferredWidth(10);
+                myCRUD.disconnect();
+            }
+        }
     }
 
     /**
@@ -167,25 +217,25 @@ public class SystemUI extends javax.swing.JFrame {
         btnDeleteTable = new javax.swing.JButton();
         PrincipalTabbed = new javax.swing.JTabbedPane();
         jPannelTables = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        TableOfPrincipal = new javax.swing.JTable();
         btnAddCommand = new javax.swing.JButton();
         btnDeleteCommand = new javax.swing.JButton();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        TableOfPrincipal = new javax.swing.JTable();
         jPanelDishes = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tableDishesList = new javax.swing.JTable();
         btnAddDish = new javax.swing.JButton();
         btnDeleteDish = new javax.swing.JButton();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        tableDishesList = new javax.swing.JTable();
         jPanelDrinks = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         tableDrinksList = new javax.swing.JTable();
         btnAddDrink = new javax.swing.JButton();
         btnDeleteDrink = new javax.swing.JButton();
         jPanelDesserts = new javax.swing.JPanel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        tableDessertsList = new javax.swing.JTable();
         btnAddDessert = new javax.swing.JButton();
         btnDeleteDessert = new javax.swing.JButton();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        tableDessertsList = new javax.swing.JTable();
         jPanelTicketPreviwe = new javax.swing.JPanel();
         btnPrintTicket = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -272,6 +322,11 @@ public class SystemUI extends javax.swing.JFrame {
                 "Tables"
             }
         ));
+        jTablesList.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTablesListMouseClicked(evt);
+            }
+        });
         jScrollPane5.setViewportView(jTablesList);
 
         btnAddTableList.setBackground(new java.awt.Color(22, 117, 145));
@@ -320,19 +375,6 @@ public class SystemUI extends javax.swing.JFrame {
 
         jPannelTables.setBackground(new java.awt.Color(22, 117, 145));
 
-        TableOfPrincipal.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "NAME", "Price"
-            }
-        ));
-        TableOfPrincipal.setMaximumSize(new java.awt.Dimension(500, 64));
-        TableOfPrincipal.setPreferredSize(new java.awt.Dimension(500, 64));
-        TableOfPrincipal.setShowGrid(true);
-        jScrollPane1.setViewportView(TableOfPrincipal);
-
         btnAddCommand.setBackground(new java.awt.Color(22, 117, 145));
         btnAddCommand.setForeground(new java.awt.Color(22, 117, 145));
         btnAddCommand.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
@@ -343,6 +385,16 @@ public class SystemUI extends javax.swing.JFrame {
         btnDeleteCommand.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/deleteSmall.png"))); // NOI18N
         btnDeleteCommand.setPreferredSize(new java.awt.Dimension(50, 45));
 
+        TableOfPrincipal.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "NAME", "Price", "Details"
+            }
+        ));
+        jScrollPane7.setViewportView(TableOfPrincipal);
+
         javax.swing.GroupLayout jPannelTablesLayout = new javax.swing.GroupLayout(jPannelTables);
         jPannelTables.setLayout(jPannelTablesLayout);
         jPannelTablesLayout.setHorizontalGroup(
@@ -352,13 +404,13 @@ public class SystemUI extends javax.swing.JFrame {
                 .addComponent(btnAddCommand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(200, 200, 200)
                 .addComponent(btnDeleteCommand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(194, 194, 194))
-            .addComponent(jScrollPane1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jScrollPane7)
         );
         jPannelTablesLayout.setVerticalGroup(
             jPannelTablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPannelTablesLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPannelTablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAddCommand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -370,18 +422,6 @@ public class SystemUI extends javax.swing.JFrame {
 
         jPanelDishes.setBackground(new java.awt.Color(22, 117, 145));
         jPanelDishes.setPreferredSize(new java.awt.Dimension(720, 500));
-
-        tableDishesList.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "NAME", "Price", "Details"
-            }
-        ));
-        tableDishesList.setMaximumSize(new java.awt.Dimension(515, 64));
-        tableDishesList.setPreferredSize(new java.awt.Dimension(500, 64));
-        jScrollPane2.setViewportView(tableDishesList);
 
         btnAddDish.setBackground(new java.awt.Color(22, 117, 145));
         btnAddDish.setForeground(new java.awt.Color(22, 117, 145));
@@ -399,6 +439,16 @@ public class SystemUI extends javax.swing.JFrame {
         btnDeleteDish.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/deleteSmall.png"))); // NOI18N
         btnDeleteDish.setPreferredSize(new java.awt.Dimension(50, 45));
 
+        tableDishesList.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "NAME", "Price", "Details"
+            }
+        ));
+        jScrollPane9.setViewportView(tableDishesList);
+
         javax.swing.GroupLayout jPanelDishesLayout = new javax.swing.GroupLayout(jPanelDishes);
         jPanelDishes.setLayout(jPanelDishesLayout);
         jPanelDishesLayout.setHorizontalGroup(
@@ -408,18 +458,18 @@ public class SystemUI extends javax.swing.JFrame {
                 .addComponent(btnAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(200, 200, 200)
                 .addComponent(btnDeleteDish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(218, Short.MAX_VALUE))
-            .addComponent(jScrollPane2)
+                .addContainerGap(215, Short.MAX_VALUE))
+            .addComponent(jScrollPane9)
         );
         jPanelDishesLayout.setVerticalGroup(
             jPanelDishesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelDishesLayout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelDishesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnDeleteDish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         PrincipalTabbed.addTab("Dishes", jPanelDishes);
@@ -440,6 +490,11 @@ public class SystemUI extends javax.swing.JFrame {
         btnAddDrink.setForeground(new java.awt.Color(22, 117, 145));
         btnAddDrink.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
         btnAddDrink.setPreferredSize(new java.awt.Dimension(50, 45));
+        btnAddDrink.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddDrinkActionPerformed(evt);
+            }
+        });
 
         btnDeleteDrink.setBackground(new java.awt.Color(22, 117, 145));
         btnDeleteDrink.setForeground(new java.awt.Color(22, 117, 145));
@@ -473,6 +528,21 @@ public class SystemUI extends javax.swing.JFrame {
 
         jPanelDesserts.setBackground(new java.awt.Color(22, 117, 145));
 
+        btnAddDessert.setBackground(new java.awt.Color(22, 117, 145));
+        btnAddDessert.setForeground(new java.awt.Color(22, 117, 145));
+        btnAddDessert.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
+        btnAddDessert.setPreferredSize(new java.awt.Dimension(50, 45));
+        btnAddDessert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddDessertActionPerformed(evt);
+            }
+        });
+
+        btnDeleteDessert.setBackground(new java.awt.Color(22, 117, 145));
+        btnDeleteDessert.setForeground(new java.awt.Color(22, 117, 145));
+        btnDeleteDessert.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/deleteSmall.png"))); // NOI18N
+        btnDeleteDessert.setPreferredSize(new java.awt.Dimension(50, 45));
+
         tableDessertsList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -481,19 +551,7 @@ public class SystemUI extends javax.swing.JFrame {
                 "NAME", "Price", "Details"
             }
         ));
-        tableDessertsList.setMaximumSize(new java.awt.Dimension(515, 64));
-        tableDessertsList.setPreferredSize(new java.awt.Dimension(500, 800));
-        jScrollPane4.setViewportView(tableDessertsList);
-
-        btnAddDessert.setBackground(new java.awt.Color(22, 117, 145));
-        btnAddDessert.setForeground(new java.awt.Color(22, 117, 145));
-        btnAddDessert.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
-        btnAddDessert.setPreferredSize(new java.awt.Dimension(50, 45));
-
-        btnDeleteDessert.setBackground(new java.awt.Color(22, 117, 145));
-        btnDeleteDessert.setForeground(new java.awt.Color(22, 117, 145));
-        btnDeleteDessert.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/deleteSmall.png"))); // NOI18N
-        btnDeleteDessert.setPreferredSize(new java.awt.Dimension(50, 45));
+        jScrollPane8.setViewportView(tableDessertsList);
 
         javax.swing.GroupLayout jPanelDessertsLayout = new javax.swing.GroupLayout(jPanelDesserts);
         jPanelDesserts.setLayout(jPanelDessertsLayout);
@@ -504,18 +562,18 @@ public class SystemUI extends javax.swing.JFrame {
                 .addComponent(btnAddDessert, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(200, 200, 200)
                 .addComponent(btnDeleteDessert, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(218, Short.MAX_VALUE))
-            .addComponent(jScrollPane4)
+                .addContainerGap(215, Short.MAX_VALUE))
+            .addComponent(jScrollPane8)
         );
         jPanelDessertsLayout.setVerticalGroup(
             jPanelDessertsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelDessertsLayout.createSequentialGroup()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelDessertsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnDeleteDessert, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAddDessert, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         PrincipalTabbed.addTab("Desserts", jPanelDesserts);
@@ -614,7 +672,11 @@ public class SystemUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPrintTicketActionPerformed
 
     private void btnAddTableListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddTableListActionPerformed
-        // TODO add the methot to add tables:
+        myCRUD.connect();
+        myCRUD.useDataBase();
+        RestaurantTable myRestaurantTable = new RestaurantTable();
+        myCRUD.addRestaurantTable(myRestaurantTable);
+        putTableTable();
     }//GEN-LAST:event_btnAddTableListActionPerformed
 
     private void btnKitchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKitchenActionPerformed
@@ -644,8 +706,42 @@ public class SystemUI extends javax.swing.JFrame {
     }//GEN-LAST:event_SingoutActionPerformed
 
     private void btnAddDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDishActionPerformed
-        // TODO add your handling code here:
+        int row = tableDishesList.getSelectedRow();
+        if (row != -1) {
+            String[] Data = new String[2];
+            Data[0] = (String)tableDishesList.getValueAt(row, 0);
+            Data[1] = (String)tableDishesList.getValueAt(row, 1);
+            tableModelCommands.addRow(Data);
+            this.TableOfPrincipal.setModel(tableModelCommands);
+            
+        }
     }//GEN-LAST:event_btnAddDishActionPerformed
+
+    private void btnAddDrinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDrinkActionPerformed
+        int row = tableDrinksList.getSelectedRow();
+        if (row != -1) {
+            String[] Data = new String[2];
+            Data[0] = (String)tableDrinksList.getValueAt(row, 0);
+            Data[1] = (String)tableDrinksList.getValueAt(row, 1);
+            tableModelCommands.addRow(Data);
+            this.TableOfPrincipal.setModel(tableModelCommands);
+        }
+    }//GEN-LAST:event_btnAddDrinkActionPerformed
+
+    private void btnAddDessertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDessertActionPerformed
+        int row = tableDessertsList.getSelectedRow();
+        if (row != -1) {
+            String[] Data = new String[2];
+            Data[0] = (String)tableDessertsList.getValueAt(row, 0);
+            Data[1] = (String)tableDessertsList.getValueAt(row, 1);
+            tableModelCommands.addRow(Data);
+            this.TableOfPrincipal.setModel(tableModelCommands);
+        }
+    }//GEN-LAST:event_btnAddDessertActionPerformed
+
+    private void jTablesListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTablesListMouseClicked
+        JOptionPane.showMessageDialog(null, jTablesList.getSelectedRow());
+    }//GEN-LAST:event_jTablesListMouseClicked
     /**
      * @param args the command line arguments
      */
@@ -707,12 +803,12 @@ public class SystemUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelDrinks;
     private javax.swing.JPanel jPanelTicketPreviwe;
     private javax.swing.JPanel jPannelTables;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTable jTableTicket;
     private javax.swing.JTable jTablesList;
     private javax.swing.JTable tableDessertsList;
