@@ -45,7 +45,7 @@ public class DeleteEmployeeUI extends javax.swing.JFrame {
         setTitle("Delete Employe");
         setName("FrameDeleteEmplyee"); // NOI18N
 
-        jPanelDeleteEmploye.setBackground(new java.awt.Color(180, 212, 222));
+        jPanelDeleteEmploye.setBackground(new java.awt.Color(22, 117, 145));
         jPanelDeleteEmploye.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanelDeleteEmploye.setToolTipText("");
         jPanelDeleteEmploye.setAutoscrolls(true);
@@ -53,12 +53,19 @@ public class DeleteEmployeeUI extends javax.swing.JFrame {
 
         TitleDeleteEmployee.setBackground(new java.awt.Color(0, 0, 0));
         TitleDeleteEmployee.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        TitleDeleteEmployee.setForeground(new java.awt.Color(87, 50, 13));
         TitleDeleteEmployee.setText("Delete Employe");
 
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(87, 50, 13));
         jLabel2.setText("Name: ");
 
+        EmployLastName.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        EmployLastName.setForeground(new java.awt.Color(87, 50, 13));
         EmployLastName.setText("Last name");
 
+        bckDeleteEmploye.setBackground(new java.awt.Color(22, 117, 145));
+        bckDeleteEmploye.setForeground(new java.awt.Color(22, 117, 145));
         bckDeleteEmploye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back_2.png"))); // NOI18N
         bckDeleteEmploye.setMaximumSize(new java.awt.Dimension(50, 45));
         bckDeleteEmploye.setMinimumSize(new java.awt.Dimension(30, 30));
@@ -79,8 +86,12 @@ public class DeleteEmployeeUI extends javax.swing.JFrame {
             }
         });
 
+        LastName.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        LastName.setForeground(new java.awt.Color(87, 50, 13));
         LastName.setText("UserName");
 
+        jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(87, 50, 13));
         jLabel4.setText("Job");
         jLabel4.setToolTipText("");
 
@@ -119,7 +130,7 @@ public class DeleteEmployeeUI extends javax.swing.JFrame {
                     .addGroup(jPanelDeleteEmployeLayout.createSequentialGroup()
                         .addGap(55, 55, 55)
                         .addComponent(EmployLastName)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                         .addGroup(jPanelDeleteEmployeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(InUserNameDeleteEmployetxt)
                             .addComponent(InLastNameDeleteEmployeetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)

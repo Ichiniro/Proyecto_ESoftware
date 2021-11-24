@@ -42,7 +42,7 @@ public class AddDish extends javax.swing.JFrame {
         setName("VInfoDish"); // NOI18N
         setResizable(false);
 
-        jPanelAddInfoDish.setBackground(new java.awt.Color(180, 212, 222));
+        jPanelAddInfoDish.setBackground(new java.awt.Color(22, 117, 145));
         jPanelAddInfoDish.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         TitleAddInfoDish.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
@@ -64,6 +64,7 @@ public class AddDish extends javax.swing.JFrame {
             }
         });
 
+        btnBackAddDish.setBackground(new java.awt.Color(22, 117, 145));
         btnBackAddDish.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back_2.png"))); // NOI18N
         btnBackAddDish.setMinimumSize(new java.awt.Dimension(30, 30));
         btnBackAddDish.setPreferredSize(new java.awt.Dimension(50, 45));
@@ -73,6 +74,7 @@ public class AddDish extends javax.swing.JFrame {
             }
         });
 
+        bntAddDishConfirm.setBackground(new java.awt.Color(22, 117, 145));
         bntAddDishConfirm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
         bntAddDishConfirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

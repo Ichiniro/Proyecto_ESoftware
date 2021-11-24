@@ -54,7 +54,7 @@ public class SystemUI extends javax.swing.JFrame {
         btnKitchen = new javax.swing.JButton();
         tablePanel = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTablesList = new javax.swing.JTable();
         btnAddTableList = new javax.swing.JButton();
         btnDeleteTable = new javax.swing.JButton();
         PrincipalTabbed = new javax.swing.JTabbedPane();
@@ -81,7 +81,7 @@ public class SystemUI extends javax.swing.JFrame {
         jPanelTicketPreviwe = new javax.swing.JPanel();
         btnPrintTicket = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        jTableTicket = new javax.swing.JTable();
 
         Singout.setText("Sing out");
         Singout.addActionListener(new java.awt.event.ActionListener() {
@@ -135,7 +135,7 @@ public class SystemUI extends javax.swing.JFrame {
         titlePanelLayout.setHorizontalGroup(
             titlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(titlePanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(806, Short.MAX_VALUE)
                 .addComponent(btnKitchen, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSettings, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -151,12 +151,12 @@ public class SystemUI extends javax.swing.JFrame {
                     .addComponent(btnKitchen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnUsers)
                     .addComponent(btnSettings, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         tablePanel.setBackground(new java.awt.Color(22, 117, 145));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTablesList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -164,8 +164,9 @@ public class SystemUI extends javax.swing.JFrame {
                 "Tables"
             }
         ));
-        jScrollPane5.setViewportView(jTable1);
+        jScrollPane5.setViewportView(jTablesList);
 
+        btnAddTableList.setBackground(new java.awt.Color(22, 117, 145));
         btnAddTableList.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/confirm.png"))); // NOI18N
         btnAddTableList.setMaximumSize(new java.awt.Dimension(50, 45));
         btnAddTableList.setMinimumSize(new java.awt.Dimension(30, 30));
@@ -176,6 +177,7 @@ public class SystemUI extends javax.swing.JFrame {
             }
         });
 
+        btnDeleteTable.setBackground(new java.awt.Color(22, 117, 145));
         btnDeleteTable.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/deleteSmall.png"))); // NOI18N
         btnDeleteTable.setMinimumSize(new java.awt.Dimension(30, 30));
         btnDeleteTable.setPreferredSize(new java.awt.Dimension(55, 45));
@@ -208,12 +210,14 @@ public class SystemUI extends javax.swing.JFrame {
 
         PrincipalTabbed.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jPannelTables.setBackground(new java.awt.Color(22, 117, 145));
+
         TableOfPrincipal.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "NAME", "Price"
             }
         ));
         TableOfPrincipal.setMaximumSize(new java.awt.Dimension(500, 64));
@@ -221,41 +225,43 @@ public class SystemUI extends javax.swing.JFrame {
         TableOfPrincipal.setShowGrid(true);
         jScrollPane1.setViewportView(TableOfPrincipal);
 
+        btnAddCommand.setBackground(new java.awt.Color(22, 117, 145));
+        btnAddCommand.setForeground(new java.awt.Color(22, 117, 145));
         btnAddCommand.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
         btnAddCommand.setPreferredSize(new java.awt.Dimension(50, 45));
 
+        btnDeleteCommand.setBackground(new java.awt.Color(22, 117, 145));
+        btnDeleteCommand.setForeground(new java.awt.Color(22, 117, 145));
         btnDeleteCommand.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/deleteSmall.png"))); // NOI18N
+        btnDeleteCommand.setPreferredSize(new java.awt.Dimension(50, 45));
 
         javax.swing.GroupLayout jPannelTablesLayout = new javax.swing.GroupLayout(jPannelTables);
         jPannelTables.setLayout(jPannelTablesLayout);
         jPannelTablesLayout.setHorizontalGroup(
             jPannelTablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPannelTablesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
-            .addGroup(jPannelTablesLayout.createSequentialGroup()
                 .addGap(200, 200, 200)
                 .addComponent(btnAddCommand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 226, Short.MAX_VALUE)
-                .addComponent(btnDeleteCommand)
+                .addGap(200, 200, 200)
+                .addComponent(btnDeleteCommand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(194, 194, 194))
+            .addComponent(jScrollPane1)
         );
         jPannelTablesLayout.setVerticalGroup(
             jPannelTablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPannelTablesLayout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPannelTablesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAddCommand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDeleteCommand))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnDeleteCommand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         PrincipalTabbed.addTab("Tables", jPannelTables);
 
-        jPanelDishes.setPreferredSize(new java.awt.Dimension(724, 500));
+        jPanelDishes.setBackground(new java.awt.Color(22, 117, 145));
+        jPanelDishes.setPreferredSize(new java.awt.Dimension(720, 500));
 
         jTableDishesList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -269,6 +275,8 @@ public class SystemUI extends javax.swing.JFrame {
         jTableDishesList.setPreferredSize(new java.awt.Dimension(500, 64));
         jScrollPane2.setViewportView(jTableDishesList);
 
+        btnAddDish.setBackground(new java.awt.Color(22, 117, 145));
+        btnAddDish.setForeground(new java.awt.Color(22, 117, 145));
         btnAddDish.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
         btnAddDish.setPreferredSize(new java.awt.Dimension(50, 45));
         btnAddCommand.setPreferredSize(new java.awt.Dimension(50, 45));
@@ -278,36 +286,37 @@ public class SystemUI extends javax.swing.JFrame {
             }
         });
 
+        btnDeleteDish.setBackground(new java.awt.Color(22, 117, 145));
+        btnDeleteDish.setForeground(new java.awt.Color(22, 117, 145));
         btnDeleteDish.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/deleteSmall.png"))); // NOI18N
+        btnDeleteDish.setPreferredSize(new java.awt.Dimension(50, 45));
 
         javax.swing.GroupLayout jPanelDishesLayout = new javax.swing.GroupLayout(jPanelDishes);
         jPanelDishes.setLayout(jPanelDishesLayout);
         jPanelDishesLayout.setHorizontalGroup(
             jPanelDishesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelDishesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 712, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanelDishesLayout.createSequentialGroup()
                 .addGap(200, 200, 200)
                 .addComponent(btnAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(200, 200, 200)
-                .addComponent(btnDeleteDish)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(btnDeleteDish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(218, Short.MAX_VALUE))
+            .addComponent(jScrollPane2)
         );
         jPanelDishesLayout.setVerticalGroup(
             jPanelDishesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelDishesLayout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanelDishesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelDishesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDeleteDish))
-                .addContainerGap(12, Short.MAX_VALUE))
+                    .addComponent(btnDeleteDish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         PrincipalTabbed.addTab("Dishes", jPanelDishes);
+
+        jPanelDrinks.setBackground(new java.awt.Color(22, 117, 145));
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -319,9 +328,13 @@ public class SystemUI extends javax.swing.JFrame {
         ));
         jScrollPane6.setViewportView(jTable2);
 
+        btnAddDrink.setBackground(new java.awt.Color(22, 117, 145));
+        btnAddDrink.setForeground(new java.awt.Color(22, 117, 145));
         btnAddDrink.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
         btnAddDrink.setPreferredSize(new java.awt.Dimension(50, 45));
 
+        btnDeleteDrink.setBackground(new java.awt.Color(22, 117, 145));
+        btnDeleteDrink.setForeground(new java.awt.Color(22, 117, 145));
         btnDeleteDrink.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/deleteSmall.png"))); // NOI18N
         btnDeleteDrink.setPreferredSize(new java.awt.Dimension(50, 45));
 
@@ -330,29 +343,27 @@ public class SystemUI extends javax.swing.JFrame {
         jPanelDrinksLayout.setHorizontalGroup(
             jPanelDrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelDrinksLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 712, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanelDrinksLayout.createSequentialGroup()
                 .addGap(200, 200, 200)
                 .addComponent(btnAddDrink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(200, 200, 200)
                 .addComponent(btnDeleteDrink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(218, Short.MAX_VALUE))
+            .addComponent(jScrollPane6)
         );
         jPanelDrinksLayout.setVerticalGroup(
             jPanelDrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelDrinksLayout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelDrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAddDrink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnDeleteDrink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         PrincipalTabbed.addTab("Drinks", jPanelDrinks);
+
+        jPanelDesserts.setBackground(new java.awt.Color(22, 117, 145));
 
         jTableDessertsList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -363,34 +374,40 @@ public class SystemUI extends javax.swing.JFrame {
             }
         ));
         jTableDessertsList.setMaximumSize(new java.awt.Dimension(515, 64));
-        jTableDessertsList.setPreferredSize(new java.awt.Dimension(515, 800));
+        jTableDessertsList.setPreferredSize(new java.awt.Dimension(500, 800));
         jScrollPane4.setViewportView(jTableDessertsList);
 
-        btnAddDessert.setText("jButton3");
+        btnAddDessert.setBackground(new java.awt.Color(22, 117, 145));
+        btnAddDessert.setForeground(new java.awt.Color(22, 117, 145));
+        btnAddDessert.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
+        btnAddDessert.setPreferredSize(new java.awt.Dimension(50, 45));
 
-        btnDeleteDessert.setText("jButton4");
+        btnDeleteDessert.setBackground(new java.awt.Color(22, 117, 145));
+        btnDeleteDessert.setForeground(new java.awt.Color(22, 117, 145));
+        btnDeleteDessert.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/deleteSmall.png"))); // NOI18N
+        btnDeleteDessert.setPreferredSize(new java.awt.Dimension(50, 45));
 
         javax.swing.GroupLayout jPanelDessertsLayout = new javax.swing.GroupLayout(jPanelDesserts);
         jPanelDesserts.setLayout(jPanelDessertsLayout);
         jPanelDessertsLayout.setHorizontalGroup(
             jPanelDessertsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 724, Short.MAX_VALUE)
             .addGroup(jPanelDessertsLayout.createSequentialGroup()
-                .addGap(167, 167, 167)
-                .addComponent(btnAddDessert)
-                .addGap(159, 159, 159)
-                .addComponent(btnDeleteDessert)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(200, 200, 200)
+                .addComponent(btnAddDessert, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(200, 200, 200)
+                .addComponent(btnDeleteDessert, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(218, Short.MAX_VALUE))
+            .addComponent(jScrollPane4)
         );
         jPanelDessertsLayout.setVerticalGroup(
             jPanelDessertsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelDessertsLayout.createSequentialGroup()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanelDessertsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAddDessert)
-                    .addComponent(btnDeleteDessert))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelDessertsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnDeleteDessert, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAddDessert, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         PrincipalTabbed.addTab("Desserts", jPanelDesserts);
@@ -399,7 +416,9 @@ public class SystemUI extends javax.swing.JFrame {
         jPanelTicketPreviwe.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanelTicketPreviwe.setMaximumSize(new java.awt.Dimension(289, 90));
         jPanelTicketPreviwe.setName(""); // NOI18N
+        jPanelTicketPreviwe.setPreferredSize(new java.awt.Dimension(210, 590));
 
+        btnPrintTicket.setBackground(new java.awt.Color(11, 59, 74));
         btnPrintTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/printer.png"))); // NOI18N
         btnPrintTicket.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -407,7 +426,7 @@ public class SystemUI extends javax.swing.JFrame {
             }
         });
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        jTableTicket.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -415,10 +434,10 @@ public class SystemUI extends javax.swing.JFrame {
                 "Product", "Price"
             }
         ));
-        jScrollPane3.setViewportView(jTable3);
-        if (jTable3.getColumnModel().getColumnCount() > 0) {
-            jTable3.getColumnModel().getColumn(0).setPreferredWidth(10);
-            jTable3.getColumnModel().getColumn(1).setPreferredWidth(10);
+        jScrollPane3.setViewportView(jTableTicket);
+        if (jTableTicket.getColumnModel().getColumnCount() > 0) {
+            jTableTicket.getColumnModel().getColumn(0).setPreferredWidth(10);
+            jTableTicket.getColumnModel().getColumn(1).setPreferredWidth(10);
         }
 
         javax.swing.GroupLayout jPanelTicketPreviweLayout = new javax.swing.GroupLayout(jPanelTicketPreviwe);
@@ -428,18 +447,18 @@ public class SystemUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelTicketPreviweLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnPrintTicket)
-                .addGap(75, 75, 75))
+                .addGap(63, 63, 63))
             .addGroup(jPanelTicketPreviweLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(16, 16, 16)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         jPanelTicketPreviweLayout.setVerticalGroup(
             jPanelTicketPreviweLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelTicketPreviweLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addGap(18, 18, 18)
                 .addComponent(btnPrintTicket)
                 .addGap(46, 46, 46))
         );
@@ -450,17 +469,17 @@ public class SystemUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(tablePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PrincipalTabbed, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanelTicketPreviwe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(PrincipalTabbed, javax.swing.GroupLayout.PREFERRED_SIZE, 724, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanelTicketPreviwe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(SystemLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(titlePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(titlePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -468,14 +487,12 @@ public class SystemUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(SystemLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 23, Short.MAX_VALUE))
-                    .addComponent(titlePanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(titlePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SystemLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(PrincipalTabbed, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanelTicketPreviwe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanelTicketPreviwe, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)
                     .addComponent(tablePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(20, 20, 20))
         );
@@ -588,11 +605,11 @@ public class SystemUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
     private javax.swing.JTable jTableDessertsList;
     private javax.swing.JTable jTableDishesList;
+    private javax.swing.JTable jTableTicket;
+    private javax.swing.JTable jTablesList;
     private javax.swing.JPanel tablePanel;
     private javax.swing.JPanel titlePanel;
     // End of variables declaration//GEN-END:variables

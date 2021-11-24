@@ -43,7 +43,7 @@
     <Container class="javax.swing.JPanel" name="jPanelAddInfoDish">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="de" green="d4" red="b4" type="rgb"/>
+          <Color blue="91" green="75" red="16" type="rgb"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
@@ -141,6 +141,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnBackAddDish">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="91" green="75" red="16" type="rgb"/>
+            </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/images/back_2.png"/>
             </Property>
@@ -157,6 +160,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="bntAddDishConfirm">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="91" green="75" red="16" type="rgb"/>
+            </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/images/add.png"/>
             </Property>

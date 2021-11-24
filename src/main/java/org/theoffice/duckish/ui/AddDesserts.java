@@ -44,7 +44,7 @@ public class AddDesserts extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(380, 400));
         setResizable(false);
 
-        AddDessertPanel.setBackground(new java.awt.Color(180, 212, 222));
+        AddDessertPanel.setBackground(new java.awt.Color(22, 117, 145));
         AddDessertPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         AddDessertPanel.setPreferredSize(new java.awt.Dimension(380, 400));
 
@@ -55,6 +55,7 @@ public class AddDesserts extends javax.swing.JFrame {
 
         PriceDessert.setText("Price: ");
 
+        btnBackAddDessert.setBackground(new java.awt.Color(22, 117, 145));
         btnBackAddDessert.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back_2.png"))); // NOI18N
         btnBackAddDessert.setPreferredSize(new java.awt.Dimension(50, 45));
         btnBackAddDessert.addActionListener(new java.awt.event.ActionListener() {
@@ -63,6 +64,7 @@ public class AddDesserts extends javax.swing.JFrame {
             }
         });
 
+        bntAddDessertConfirm.setBackground(new java.awt.Color(22, 117, 145));
         bntAddDessertConfirm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
         bntAddDessertConfirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

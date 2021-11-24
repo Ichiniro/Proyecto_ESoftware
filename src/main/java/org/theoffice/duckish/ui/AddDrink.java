@@ -40,10 +40,9 @@ public class AddDrink extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("AddDrink");
         setName("AddDrink"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(380, 400));
         setResizable(false);
 
-        jPanelAddInfoDrink.setBackground(new java.awt.Color(180, 212, 222));
+        jPanelAddInfoDrink.setBackground(new java.awt.Color(22, 117, 145));
         jPanelAddInfoDrink.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanelAddInfoDrink.setPreferredSize(new java.awt.Dimension(380, 400));
 
@@ -54,6 +53,7 @@ public class AddDrink extends javax.swing.JFrame {
 
         PriceDrink.setText("Price: ");
 
+        btnBckAddDrink.setBackground(new java.awt.Color(22, 117, 145));
         btnBckAddDrink.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back_2.png"))); // NOI18N
         btnBckAddDrink.setPreferredSize(new java.awt.Dimension(50, 44));
         btnBckAddDrink.addActionListener(new java.awt.event.ActionListener() {
@@ -62,6 +62,7 @@ public class AddDrink extends javax.swing.JFrame {
             }
         });
 
+        btnAddDrinkConfirm.setBackground(new java.awt.Color(22, 117, 145));
         btnAddDrinkConfirm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
         btnAddDrinkConfirm.setPreferredSize(new java.awt.Dimension(50, 45));
         btnAddDrinkConfirm.addActionListener(new java.awt.event.ActionListener() {
