@@ -123,10 +123,11 @@ public class SignUpUI extends JFrame {
                         myCRUD.useDataBase();
                         myCRUD.creatTables();
                         if (myCRUD.addEmployee(employee)) {
+                            myCRUD.disconnect();
                             JOptionPane.showMessageDialog(null,
                                 "Account created succesfully. Press ok to cotinue.");
                             this.dispose();
-                            SystemUI myS = new SystemUI();
+                            SystemUI myS = new SystemUI(employee);
                             myS.setVisible(true);
                         } else {
                             JOptionPane.showMessageDialog(null,

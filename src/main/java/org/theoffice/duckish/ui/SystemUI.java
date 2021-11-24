@@ -1,39 +1,147 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.theoffice.duckish.ui;
-import org.theoffice.duckish.obj.Employee;
 
-/**
- *
- * @author al
- */
-
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import org.theoffice.duckish.obj.*;
+import org.theoffice.duckish.proc.CRUD;
 
 public class SystemUI extends javax.swing.JFrame {
-    
+
     private Employee userEmployee;
+    CRUD myCRUD = new CRUD("root", "902020");
+    DefaultTableModel tableModelDishes = new DefaultTableModel();
+    DefaultTableModel tableModelDrinks = new DefaultTableModel();
+    DefaultTableModel tableModelDesserts = new DefaultTableModel();
 
     public void setUserEmployee(Employee userEmployee) {
         this.userEmployee = userEmployee;
     }
-    
 
-    /**
-     * Creates new form SystemUI
-     */
+    public SystemUI(Employee userEmployee) {
+        this.userEmployee = userEmployee;
+        initComponents();
+        setLocationRelativeTo(null);
+
+        if (userEmployee.getJobTitle().equals("Manager")) {
+
+            btnSettings.setEnabled(true);
+        } else {
+            btnSettings.setEnabled(false);
+        }
+        
+        putDishesTable();
+        putDrinksTable();
+        putDessertsTable();
+    }
+
     public SystemUI() {
         initComponents();
         setLocationRelativeTo(null);
+        putDishesTable();
+        putDrinksTable();
+        putDessertsTable();
         
-    if(userEmployee.equals("Manager")){
-       
-        btnSettings.setEnabled(true);
     }
-    else{btnSettings.setEnabled(false);} 
+    private void cleanTableDish(){
+        for (int i = 0; i < tableDishesList.getRowCount(); i++) {
+            tableModelDishes.removeRow(i);
+            //This smell bad
+            i-=1;
+        }
+    }
+    private void cleanTableDrink(){
+        for (int i = 0; i < tableDrinksList.getRowCount(); i++) {
+            tableModelDrinks.removeRow(i);
+            //This smell bad
+            i-=1;
+        }
+    }
+    private void cleanTableDessert(){
+        for (int i = 0; i < tableDessertsList.getRowCount(); i++) {
+            tableModelDesserts.removeRow(i);
+            //This smell bad
+            i-=1;
+        }
+    }
     
+    private void putDishesTable(){
+        cleanTableDish();
+        tableModelDishes.addColumn("Name");
+        tableModelDishes.addColumn("Price");
+        ArrayList Products;
+        Dish myDish;
+        if(myCRUD.connect()){
+            myCRUD.useDataBase();
+            String[] Data = new String [3];
+            Products = myCRUD.getDishesDish();
+            if (Products != null) {
+                for(int i = 0; i<Products.size();i++){
+                myDish = (Dish) Products.get(i);
+                Data[0] = myDish.getName();
+                Data[1] = String.valueOf(myDish.getPrice());
+                tableModelDishes.addRow(Data);
+                }
+                this.tableDishesList.setModel(tableModelDishes);
+                this.tableDishesList.getColumnModel().getColumn(0).setPreferredWidth(100);
+                this.tableDishesList.getColumnModel().getColumn(1).setPreferredWidth(100);
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Error to get data");
+        }        
+    }
+    
+    private void putDrinksTable(){
+        cleanTableDrink();
+        tableModelDrinks.addColumn("Name");
+        tableModelDrinks.addColumn("Price");
+        ArrayList Products;
+        Dish myDish;
+        if(myCRUD.connect()){
+            myCRUD.useDataBase();
+            String[] Data = new String [3];
+            Products = myCRUD.getDishesDrink();
+            if (Products != null) {
+                for(int i = 0; i<Products.size();i++){
+                myDish = (Dish) Products.get(i);
+                Data[0] = myDish.getName();
+                Data[1] = String.valueOf(myDish.getPrice());
+                tableModelDrinks.addRow(Data);
+                }
+                this.tableDrinksList.setModel(tableModelDrinks);
+                this.tableDrinksList.getColumnModel().getColumn(0).setPreferredWidth(100);
+                this.tableDrinksList.getColumnModel().getColumn(1).setPreferredWidth(100);
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Error to get data");
+        }        
+    }
+    
+    private void putDessertsTable(){
+        cleanTableDessert();
+        tableModelDesserts.addColumn("Name");
+        tableModelDesserts.addColumn("Price");
+        ArrayList Products;
+        Dish myDish;
+        if(myCRUD.connect()){
+            myCRUD.useDataBase();
+            String[] Data = new String [3];
+            Products = myCRUD.getDishesDesserts();
+            if (Products != null) {
+                for(int i = 0; i<Products.size();i++){
+                myDish = (Dish) Products.get(i);
+                Data[0] = myDish.getName();
+                Data[1] = String.valueOf(myDish.getPrice());
+                tableModelDesserts.addRow(Data);
+                }
+                this.tableDessertsList.setModel(tableModelDesserts);
+                this.tableDessertsList.getColumnModel().getColumn(0).setPreferredWidth(100);
+                this.tableDessertsList.getColumnModel().getColumn(1).setPreferredWidth(100);
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Error to get data");
+        }        
     }
 
     /**
@@ -65,17 +173,17 @@ public class SystemUI extends javax.swing.JFrame {
         btnDeleteCommand = new javax.swing.JButton();
         jPanelDishes = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTableDishesList = new javax.swing.JTable();
+        tableDishesList = new javax.swing.JTable();
         btnAddDish = new javax.swing.JButton();
         btnDeleteDish = new javax.swing.JButton();
         jPanelDrinks = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tableDrinksList = new javax.swing.JTable();
         btnAddDrink = new javax.swing.JButton();
         btnDeleteDrink = new javax.swing.JButton();
         jPanelDesserts = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTableDessertsList = new javax.swing.JTable();
+        tableDessertsList = new javax.swing.JTable();
         btnAddDessert = new javax.swing.JButton();
         btnDeleteDessert = new javax.swing.JButton();
         jPanelTicketPreviwe = new javax.swing.JPanel();
@@ -263,7 +371,7 @@ public class SystemUI extends javax.swing.JFrame {
         jPanelDishes.setBackground(new java.awt.Color(22, 117, 145));
         jPanelDishes.setPreferredSize(new java.awt.Dimension(720, 500));
 
-        jTableDishesList.setModel(new javax.swing.table.DefaultTableModel(
+        tableDishesList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -271,9 +379,9 @@ public class SystemUI extends javax.swing.JFrame {
                 "NAME", "Price", "Details"
             }
         ));
-        jTableDishesList.setMaximumSize(new java.awt.Dimension(515, 64));
-        jTableDishesList.setPreferredSize(new java.awt.Dimension(500, 64));
-        jScrollPane2.setViewportView(jTableDishesList);
+        tableDishesList.setMaximumSize(new java.awt.Dimension(515, 64));
+        tableDishesList.setPreferredSize(new java.awt.Dimension(500, 64));
+        jScrollPane2.setViewportView(tableDishesList);
 
         btnAddDish.setBackground(new java.awt.Color(22, 117, 145));
         btnAddDish.setForeground(new java.awt.Color(22, 117, 145));
@@ -310,8 +418,10 @@ public class SystemUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelDishesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+
                     .addComponent(btnDeleteDish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(30, Short.MAX_VALUE))
+
         );
 
         PrincipalTabbed.addTab("Dishes", jPanelDishes);
@@ -319,6 +429,7 @@ public class SystemUI extends javax.swing.JFrame {
         jPanelDrinks.setBackground(new java.awt.Color(22, 117, 145));
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
+
             new Object [][] {
 
             },
@@ -326,7 +437,7 @@ public class SystemUI extends javax.swing.JFrame {
                 "NAME", "Price", "Details"
             }
         ));
-        jScrollPane6.setViewportView(jTable2);
+        jScrollPane6.setViewportView(tableDrinksList);
 
         btnAddDrink.setBackground(new java.awt.Color(22, 117, 145));
         btnAddDrink.setForeground(new java.awt.Color(22, 117, 145));
@@ -358,6 +469,7 @@ public class SystemUI extends javax.swing.JFrame {
                 .addGroup(jPanelDrinksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAddDrink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnDeleteDrink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                      
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -376,6 +488,7 @@ public class SystemUI extends javax.swing.JFrame {
         jTableDessertsList.setMaximumSize(new java.awt.Dimension(515, 64));
         jTableDessertsList.setPreferredSize(new java.awt.Dimension(500, 800));
         jScrollPane4.setViewportView(jTableDessertsList);
+
 
         btnAddDessert.setBackground(new java.awt.Color(22, 117, 145));
         btnAddDessert.setForeground(new java.awt.Color(22, 117, 145));
@@ -502,26 +615,26 @@ public class SystemUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPrintTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintTicketActionPerformed
-        // TODO add your handling code here:
+        // TODO add the methot to print a ticket:
     }//GEN-LAST:event_btnPrintTicketActionPerformed
 
     private void btnAddTableListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddTableListActionPerformed
-        // TODO add your handling code here:
+        // TODO add the methot to add tables:
     }//GEN-LAST:event_btnAddTableListActionPerformed
 
     private void btnKitchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKitchenActionPerformed
-        // TODO add your handling code here:
+        // Chage the general view to the Kitchen view
         this.setVisible(false);
         Kitchen gok = new Kitchen();
         gok.setVisible(true);
     }//GEN-LAST:event_btnKitchenActionPerformed
 
     private void btnSettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSettingsActionPerformed
-        // TODO add your handling code here:
+        // Change the general view to the admin options
         this.setVisible(false);
         AdminUI goAdm = new AdminUI();
-        goAdm.setVisible(true);   
-        
+        goAdm.setVisible(true);
+
     }//GEN-LAST:event_btnSettingsActionPerformed
 
     private void btnUsersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsersActionPerformed
@@ -538,7 +651,7 @@ public class SystemUI extends javax.swing.JFrame {
     private void btnAddDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDishActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAddDishActionPerformed
-   /**
+    /**
      * @param args the command line arguments
      */
 
@@ -610,6 +723,7 @@ public class SystemUI extends javax.swing.JFrame {
     private javax.swing.JTable jTableDishesList;
     private javax.swing.JTable jTableTicket;
     private javax.swing.JTable jTablesList;
+
     private javax.swing.JPanel tablePanel;
     private javax.swing.JPanel titlePanel;
     // End of variables declaration//GEN-END:variables

@@ -67,9 +67,9 @@ public class LoginUI extends JFrame {
             Employee emp = myCRUD.searchEmployee(usernameTF.getText());
             String hash = DButilities.encriptPWD(String.valueOf(passwordTF.getPassword()));
             if (emp.getPassword().equals(hash)) {
-                SystemUI myS = new SystemUI();
+                myCRUD.disconnect();
+                SystemUI myS = new SystemUI(emp);
                 myS.setVisible(true);
-                myS.setUserEmployee(emp);
                 this.dispose();
             } else {
                 JOptionPane.showMessageDialog(null,

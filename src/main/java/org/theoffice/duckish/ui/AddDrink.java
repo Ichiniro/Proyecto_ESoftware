@@ -1,19 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.theoffice.duckish.ui;
-
-/**
- *
- * @author al
- */
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
+import org.theoffice.duckish.proc.CRUD;
+import org.theoffice.duckish.obj.Dish;
 public class AddDrink extends javax.swing.JFrame {
 
     /**
      * Creates new form AddDrink
      */
+    CRUD myCRUD = new CRUD("root", "902020");
+    
     public AddDrink() {
         initComponents();
         setLocationRelativeTo(null);
@@ -53,7 +49,9 @@ public class AddDrink extends javax.swing.JFrame {
 
         PriceDrink.setText("Price: ");
 
+
         btnBckAddDrink.setBackground(new java.awt.Color(22, 117, 145));
+
         btnBckAddDrink.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back_2.png"))); // NOI18N
         btnBckAddDrink.setPreferredSize(new java.awt.Dimension(50, 44));
         btnBckAddDrink.addActionListener(new java.awt.event.ActionListener() {
@@ -76,7 +74,7 @@ public class AddDrink extends javax.swing.JFrame {
         jPanelAddInfoDrinkLayout.setHorizontalGroup(
             jPanelAddInfoDrinkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAddInfoDrinkLayout.createSequentialGroup()
-                .addContainerGap(96, Short.MAX_VALUE)
+                .addContainerGap(123, Short.MAX_VALUE)
                 .addComponent(TitleAddInfoDrink)
                 .addGap(69, 69, 69))
             .addGroup(jPanelAddInfoDrinkLayout.createSequentialGroup()
@@ -143,8 +141,39 @@ public class AddDrink extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBckAddDrinkActionPerformed
 
     private void btnAddDrinkConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDrinkConfirmActionPerformed
-        // TODO add your handling code here:
+        Dish myDish = new Dish();
+        if (InNameDrinktxt.getText().trim().equals("")
+                && (InPriceDrinktxt.getText().trim().equals(""))) {
+
+        }
+        if (myCRUD.connect()) {
+            myDish.setName(InNameDrinktxt.getText());
+            myDish.setPrice(Float.parseFloat(InPriceDrinktxt.getText()));
+            myDish.setDescription("Drink");
+            myCRUD.connect();
+            myCRUD.useDataBase();
+            if (myCRUD.addDish(myDish)) {
+                JOptionPane.showMessageDialog(null, "The dish has been added");
+                InNameDrinktxt.setText("");
+                InPriceDrinktxt.setText("");
+            } else {
+                JOptionPane.showMessageDialog(null, "Error adding a dish");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Error connecting with the Data Base");
+        }
+        myCRUD.disconnect();
     }//GEN-LAST:event_btnAddDrinkConfirmActionPerformed
+
+    private void InPriceDrinktxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_InPriceDrinktxtKeyTyped
+        char c = evt.getKeyChar();
+        if (((c < '0') || (c > '9'))
+                && (c != '\b')
+                && (c != KeyEvent.VK_BACK_SPACE)
+                && (c != '.' || InPriceDrinktxt.getText().contains("."))) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_InPriceDrinktxtKeyTyped
 
     /**
      * @param args the command line arguments
