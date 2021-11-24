@@ -61,7 +61,7 @@ public class LoginUI extends JFrame {
         logIn.setBounds(100, 350, 200, 40);
         logIn.addActionListener(e -> {
             
-            CRUD myCRUD = new CRUD("root","902020");//Cambiar esto
+            CRUD myCRUD = new CRUD("ichi","gc");//Cambiar esto
             myCRUD.connect();
             myCRUD.useDataBase();
             Employee emp = myCRUD.searchEmployee(usernameTF.getText());
@@ -89,7 +89,7 @@ public class LoginUI extends JFrame {
                     new File("src/main/resources/images/logo.png"));
             this.setIconImage(icon);
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
 }

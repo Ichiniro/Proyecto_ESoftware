@@ -8,7 +8,7 @@ public class AddDrink extends javax.swing.JFrame {
     /**
      * Creates new form AddDrink
      */
-    CRUD myCRUD = new CRUD("root", "902020");
+    CRUD myCRUD = new CRUD("ichi", "gc");
     
     public AddDrink() {
         initComponents();

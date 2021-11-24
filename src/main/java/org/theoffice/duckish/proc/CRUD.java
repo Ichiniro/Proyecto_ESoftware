@@ -88,6 +88,10 @@ public class CRUD {
                     + "TOTAL FLOAT NOT NULL,"
                     + "primary key (COMMAND_ID)"
                     + ");");
+            statment.executeUpdate("CREATE TABLE IF NOT EXISTS RESTAURANT_TABLE("
+                    + "TABLE_NUM INT auto_increment,"
+                    + "primary key (TABLE_NUM)"
+                    + ");");
             statment.executeUpdate("CREATE TABLE IF NOT EXISTS COMMAND_DETAILS("
                     + "COMMAND_DETAILS_ID INT auto_increment,"
                     + "COMMAND_ID INT,"
@@ -99,10 +103,6 @@ public class CRUD {
                     + "foreign key (DISH_ID) references DISHES(DISH_ID),"
                     + "foreign key (EMPLOYEE_ID) references EMPLOYEES(EMPLOYEE_ID)"
                     + "foreign key (TABLE_NUM) references RESTAURANT_TABLE(TABLE_NUM)"
-                    + ");");
-            statment.executeUpdate("CREATE TABLE IF NOT EXISTS RESTAURANT_TABLE("
-                    + "TABLE_NUM INT auto_increment,"
-                    + "primary key (TABLE_NUM),"
                     + ");");
             return true;
         } catch (SQLException e) {

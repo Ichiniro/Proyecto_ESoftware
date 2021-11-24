@@ -117,7 +117,7 @@ public class SignUpUI extends JFrame {
             if (pwdFlag && usrFlag) {
                 try {
                     if (employee.isValid()) {
-                        CRUD myCRUD = new CRUD("root","902020");//Cambiar esto
+                        CRUD myCRUD = new CRUD("ichi","gc");//Cambiar esto
                         myCRUD.connect();
                         myCRUD.creatDB();
                         myCRUD.useDataBase();
@@ -139,7 +139,7 @@ public class SignUpUI extends JFrame {
                     }
                 } catch (IllegalAccessException ex) {
                     System.out.println("no se puede logear");
-                    ex.printStackTrace();
+                    //ex.printStackTrace();
                 }
             } else {
                 JOptionPane.showMessageDialog(null, warning);
@@ -158,7 +158,7 @@ public class SignUpUI extends JFrame {
                     new File("src/main/resources/images/logo.png"));
             this.setIconImage(icon);
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
 }

@@ -330,7 +330,8 @@ public class AdminUI extends javax.swing.JFrame {
 
     private void btnBackSystemUIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackSystemUIActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);
+        //this.setVisible(false);
+        this.dispose();
         SystemUI bck = new SystemUI();
         bck.setVisible(true);      
     }//GEN-LAST:event_btnBackSystemUIActionPerformed

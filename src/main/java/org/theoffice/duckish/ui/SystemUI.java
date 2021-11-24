@@ -6,17 +6,19 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import org.theoffice.duckish.obj.*;
 import org.theoffice.duckish.proc.CRUD;
+import org.theoffice.duckish.obj.TableOrders;
 
 public class SystemUI extends javax.swing.JFrame {
 
     private Employee userEmployee;
-    CRUD myCRUD = new CRUD("root", "902020");
+    CRUD myCRUD = new CRUD("ichi", "gc");
 
     DefaultTableModel tableModelDishes = new DefaultTableModel();
     DefaultTableModel tableModelDrinks = new DefaultTableModel();
     DefaultTableModel tableModelDesserts = new DefaultTableModel();
     DefaultTableModel tableModelTables = new DefaultTableModel();
     DefaultTableModel tableModelCommands = new DefaultTableModel();
+    static ArrayList<TableOrders> orders = new ArrayList<TableOrders>();
 
     public void setUserEmployee(Employee userEmployee) {
         this.userEmployee = userEmployee;
@@ -42,6 +44,8 @@ public class SystemUI extends javax.swing.JFrame {
         tableModelDesserts.addColumn("Name");
         tableModelDesserts.addColumn("Price");
         tableModelTables.addColumn("Table Number");
+        tableModelCommands.addColumn("Dish");
+        tableModelCommands.addColumn("Prices");
         putDishesTable();
         putDrinksTable();
         putDessertsTable();
@@ -379,6 +383,16 @@ public class SystemUI extends javax.swing.JFrame {
         btnAddCommand.setForeground(new java.awt.Color(22, 117, 145));
         btnAddCommand.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
         btnAddCommand.setPreferredSize(new java.awt.Dimension(50, 45));
+        btnAddCommand.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAddCommandMouseClicked(evt);
+            }
+        });
+        btnAddCommand.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddCommandActionPerformed(evt);
+            }
+        });
 
         btnDeleteCommand.setBackground(new java.awt.Color(22, 117, 145));
         btnDeleteCommand.setForeground(new java.awt.Color(22, 117, 145));
@@ -707,41 +721,56 @@ public class SystemUI extends javax.swing.JFrame {
 
     private void btnAddDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDishActionPerformed
         int row = tableDishesList.getSelectedRow();
+
         if (row != -1) {
-            String[] Data = new String[2];
-            Data[0] = (String)tableDishesList.getValueAt(row, 0);
-            Data[1] = (String)tableDishesList.getValueAt(row, 1);
-            tableModelCommands.addRow(Data);
-            this.TableOfPrincipal.setModel(tableModelCommands);
-            
+            TableOrders newOrder = new TableOrders(jTablesList.getSelectedRow(), (String)tableDishesList.getValueAt(row, 0), (String)tableDrinksList.getValueAt(row, 1));
+            orders.add(newOrder);
+            jTablesListMouseClicked(null);
         }
     }//GEN-LAST:event_btnAddDishActionPerformed
 
     private void btnAddDrinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDrinkActionPerformed
         int row = tableDrinksList.getSelectedRow();
+        
         if (row != -1) {
-            String[] Data = new String[2];
-            Data[0] = (String)tableDrinksList.getValueAt(row, 0);
-            Data[1] = (String)tableDrinksList.getValueAt(row, 1);
-            tableModelCommands.addRow(Data);
-            this.TableOfPrincipal.setModel(tableModelCommands);
+            TableOrders newOrder = new TableOrders(jTablesList.getSelectedRow(), (String)tableDrinksList.getValueAt(row, 0), (String)tableDrinksList.getValueAt(row, 1));
+            orders.add(newOrder);
+            jTablesListMouseClicked(null);
         }
     }//GEN-LAST:event_btnAddDrinkActionPerformed
 
     private void btnAddDessertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDessertActionPerformed
         int row = tableDessertsList.getSelectedRow();
+        
         if (row != -1) {
-            String[] Data = new String[2];
-            Data[0] = (String)tableDessertsList.getValueAt(row, 0);
-            Data[1] = (String)tableDessertsList.getValueAt(row, 1);
-            tableModelCommands.addRow(Data);
-            this.TableOfPrincipal.setModel(tableModelCommands);
+            TableOrders newOrder = new TableOrders(jTablesList.getSelectedRow(), (String) tableDessertsList.getValueAt(row, 0), (String) tableDessertsList.getValueAt(row, 1));
+            orders.add(newOrder);
+            jTablesListMouseClicked(null);
         }
     }//GEN-LAST:event_btnAddDessertActionPerformed
 
     private void jTablesListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTablesListMouseClicked
         JOptionPane.showMessageDialog(null, jTablesList.getSelectedRow());
+        TableOrders aux;
+        String[] Data = new String[2];
+        tableModelCommands.setRowCount(0);
+        for (int i = 0; i < orders.size(); i++) {
+            aux = orders.get(i);
+            if (aux.getTable() == jTablesList.getSelectedRow()) {
+                System.out.println(aux.getTable());
+                System.out.println(aux.getFood());
+                Data[0] = aux.getFood();
+                Data[1] = aux.getPrice();
+                tableModelCommands.addRow(Data);
+                this.TableOfPrincipal.setModel(tableModelCommands);
+            }
+        }
+        
     }//GEN-LAST:event_jTablesListMouseClicked
+
+    private void btnAddCommandMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddCommandMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddCommandMouseClicked
     /**
      * @param args the command line arguments
      */

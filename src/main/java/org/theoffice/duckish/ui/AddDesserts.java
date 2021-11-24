@@ -10,7 +10,7 @@ public class AddDesserts extends javax.swing.JFrame {
     /**
      * Creates new form AddDesserts
      */
-    CRUD myCRUD = new CRUD("root", "902020");
+    CRUD myCRUD = new CRUD("ichi", "gc");
 
     public AddDesserts() {
         initComponents();
@@ -121,7 +121,7 @@ public class AddDesserts extends javax.swing.JFrame {
                 .addGroup(AddDessertPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(bntAddDessertConfirm)
                     .addComponent(btnBackAddDessert, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

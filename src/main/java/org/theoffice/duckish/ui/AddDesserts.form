@@ -112,7 +112,7 @@
                       <Component id="bntAddDessertConfirm" min="-2" max="-2" attributes="0"/>
                       <Component id="btnBackAddDessert" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="97" max="32767" attributes="0"/>
+                  <EmptySpace pref="91" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

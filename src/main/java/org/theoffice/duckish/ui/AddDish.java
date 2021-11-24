@@ -10,7 +10,7 @@ public class AddDish extends javax.swing.JFrame {
     /**
      * Creates new form AddDish
      */
-    CRUD myCRUD = new CRUD("root", "902020");
+    CRUD myCRUD = new CRUD("ichi", "gc");
     public AddDish() {
         initComponents();
         setLocationRelativeTo(null);

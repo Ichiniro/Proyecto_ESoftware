@@ -51,7 +51,7 @@ public class StartUI extends JFrame {
                     new File("src/main/resources/images/logo.png"));
             this.setIconImage(icon);
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
 }
